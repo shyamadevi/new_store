@@ -11,5 +11,10 @@ class User extends CI_Controller{
 		// print_r($data);
 		$this->user_view('index',$data);
 	}
+
+	function cart()
+	{
+		$this->user_view('cart');
+	}
 }
 ?>

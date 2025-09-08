@@ -27,6 +27,7 @@
 
 
     <link href="<?= base_url() ?>user_assets/css/style.css" rel="stylesheet">
+    <link href="<?= base_url() ?>user_assets/css/cart.css" rel="stylesheet">
     <style>
         .top-nav {
             /* background: linear-gradient(to right, #6A1B9A 0%, #AB47BC 15%, #AB47BC 85%, #F48FB1 100%); */
@@ -90,7 +91,7 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                <a href="#" class="dropdown-item">Cart</a>
+                                <a href="<?= base_url()?>user/cart" class="dropdown-item">Cart</a>
                                 <a href="#" class="dropdown-item">Chackout</a>
                             </div>
                         </div>
