@@ -36,10 +36,10 @@
       <a class="navbar-brand" href="<?= base_url() ?>">New Store</a>
       <div class="d-flex">
         <?php if ($this->session->userdata('users2_id')) { ?>
-          <a href="<?= base_url('user/profile') ?>" class="btn btn-light me-2">
+          <a href="<?= base_url('users/profile') ?>" class="btn btn-light me-2">
             <i class="fa fa-user"></i> Profile
           </a>
-          <a href="<?= base_url('user_login/logout') ?>" class="btn btn-danger">Logout</a>
+          <a href="<?= base_url('users/logout') ?>" class="btn btn-danger">Logout</a>
         <?php } else { ?>
           <a class="btn btn-light fw-bold" data-bs-toggle="modal" data-bs-target="#authModal">
             <i class="fa fa-user"></i> Login
@@ -82,7 +82,7 @@
           <!-- Signup Form -->
           <div id="signupForm" style="display:none;">
             <h4 class="text-center mb-3">Sign Up</h4>
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
               <div class="mb-2">
                 <label class="form-label">Full Name</label>
                 <input type="text" name="name" class="form-control" required>
@@ -130,7 +130,7 @@
     $("#signupForm form").on("submit", function(e) {
       e.preventDefault();
       $.ajax({
-        url: "<?= base_url('user_login/signup') ?>",
+        url: "<?= base_url('users/signup') ?>",
         type: "POST",
         data: $(this).serialize(),
         dataType: "json",
@@ -149,7 +149,7 @@
     $("#loginForm form").on("submit", function(e) {
       e.preventDefault();
       $.ajax({
-        url: "<?= base_url('user_login/login') ?>",
+        url: "<?= base_url('users/login') ?>",
         type: "POST",
         data: $(this).serialize(),
         dataType: "json",
