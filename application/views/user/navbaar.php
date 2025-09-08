@@ -15,9 +15,9 @@
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
   <!-- custom css  -->
-  <link rel="stylesheet" href="<?=base_url()?>admin_assets/css/nav.css">
-  <link rel="stylesheet" href="<?=base_url()?>admin_assets/css/index-slider.css">
-  <link rel="stylesheet" href="<?=base_url()?>admin_assets/css/index-products.css">
+  <link rel="stylesheet" href="<?=base_url()?>user_assets/css/nav.css">
+  <link rel="stylesheet" href="<?=base_url()?>user_assets/css/index-slider.css">
+  <link rel="stylesheet" href="<?=base_url()?>user_assets/css/index-products.css">
 
   <style>
     body {

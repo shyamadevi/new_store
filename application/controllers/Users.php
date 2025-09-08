@@ -44,7 +44,7 @@ class Users extends CI_Controller{
 			if($email==$user['user_email'] && $password==$user['user_password']){
 
 				$this->session->set_userdata('users2_id', $user['user_id']);
-				$this->session->set_userdata('user2_name', $user['user_name']);
+				$this->session->set_userdata('users2_name', $user['user_name']);
 
 				echo json_encode(['status' => 'success', 'message' => 'Login successful!']);
 			} else {
@@ -58,6 +58,7 @@ class Users extends CI_Controller{
     // ✅ Logout
     public function logout(){
 	   unset($_SESSION['users2_id']);
+	   unset($_SESSION['users2_name']);
 	   redirect('user');
     }
 
