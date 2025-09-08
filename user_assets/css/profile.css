@@ -1,0 +1,63 @@
+.profile-modal-body {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  padding: 20px 10px;
+}
+.profile-modal-body img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 3px solid yellowgreen;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+.profile-modal-body img:hover {
+  transform: scale(1.05);
+  border-color: #4CAF50;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+.profile-modal-body h4 {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.profile-modal-body p {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.user-profile-edit-form {
+  max-height: 250px !important;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 10px;
+}
+.user-profile-edit-form::-webkit-scrollbar {
+  width: 6px;
+}
+.user-profile-edit-form::-webkit-scrollbar-thumb {
+  background: #2d7a36;
+  border-radius: 3px;
+}
+.user-profile-edit-form::-webkit-scrollbar-thumb:hover {
+  background: #25662d;
+}
+
+.card {
+  border-radius: 16px;
+  overflow: hidden;
+}
+.nav-tabs .nav-link {
+  font-weight: 500;
+  color: #495057;
+  transition: all 0.3s ease;
+}
+.nav-tabs .nav-link.active {
+  color: #fff;
+  background-color: #2d7a36;
+  border-radius: 8px 8px 0 0;
+}
+.table th {
+  width: 120px;
+  color: #495057;
+}

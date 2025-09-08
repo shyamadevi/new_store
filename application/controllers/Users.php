@@ -1,5 +1,5 @@
 <?php
-class User_login extends CI_Controller{
+class Users extends CI_Controller{
 
 	// ✅ Signup (AJAX)
     public function signup(){
@@ -16,6 +16,7 @@ class User_login extends CI_Controller{
             'user_email'    => $email,
             'user_password' => $password,
             'user_address'  => $address,
+            'user_status'  => 'Active',
         ];
 		if ($_FILES["profile_picture"]["error"]==0) {
 			$user_profile="user_assets/img/profile/".rand(0,50000).$data['user_name'].".png";
@@ -43,7 +44,7 @@ class User_login extends CI_Controller{
 			if($email==$user['user_email'] && $password==$user['user_password']){
 
 				$this->session->set_userdata('users2_id', $user['user_id']);
-				$this->session->set_userdata('user2_name', $user['user_name']);
+				$this->session->set_userdata('users2_name', $user['user_name']);
 
 				echo json_encode(['status' => 'success', 'message' => 'Login successful!']);
 			} else {
@@ -56,8 +57,51 @@ class User_login extends CI_Controller{
 
     // ✅ Logout
     public function logout(){
-	   unset($_SESSION['user2_id']);
+	   unset($_SESSION['users2_id']);
+	   unset($_SESSION['users2_name']);
 	   redirect('user');
     }
+
+	public function user_view($page='',$data=''){
+		if(isset($_SESSION['users2_id'])){
+			$id['user_id']=$_SESSION['users2_id'];
+			$userdata['userdata']=$this->My_model->select_where('users',$id)[0];
+			// print_r($userdata);
+		}
+
+		$this->load->view('user/navbaar',$userdata);
+		$this->load->view("user/$page",$data='');
+		$this->load->view('user/footer');
+	}
+
+	public function profile(){
+		// echo "profile page";
+		$this->user_view('profile');
+	}
+
+	public function update_profile(){
+		$cond['user_id']  = $_SESSION['users2_id'];
+
+		$data = [
+			'user_name'    => $this->input->post('user_name', true),
+			'user_phone'   => $this->input->post('user_phone', true),
+			'user_email'   => $this->input->post('user_email', true),
+			'user_address' => $this->input->post('user_address', true),
+		];
+
+		if ($_FILES["user_profile_picture"]["error"] == 0) {
+			$user_profile = "user_assets/img/profile/" . rand(0,50000) . $_POST['user_name'] . ".png";
+			move_uploaded_file($_FILES['user_profile_picture']['tmp_name'], $user_profile);
+			$data["user_profile_picture"] = $user_profile;
+		}
+
+		if (!empty($this->input->post('user_password'))) {
+			$data['user_password'] = $this->input->post('user_password');
+		}
+
+		$this->My_model->update('users', $data, $cond);
+		redirect('users/profile');
+	}
+
 }
 ?>
