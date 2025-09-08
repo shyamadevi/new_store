@@ -39,7 +39,7 @@
           <a href="<?= base_url('user/profile') ?>" class="btn btn-light me-2">
             <i class="fa fa-user"></i> Profile
           </a>
-          <a href="<?= base_url('user/logout') ?>" class="btn btn-danger">Logout</a>
+          <a href="<?= base_url('user_login/logout') ?>" class="btn btn-danger">Logout</a>
         <?php } else { ?>
           <a class="btn btn-light fw-bold" data-bs-toggle="modal" data-bs-target="#authModal">
             <i class="fa fa-user"></i> Login
@@ -66,11 +66,11 @@
             <form method="post">
               <div class="mb-3">
                 <label class="form-label">Email</label>
-                <input type="email" name="user_email" class="form-control" required>
+                <input type="email" name="email" class="form-control" required>
               </div>
               <div class="mb-3">
                 <label class="form-label">Password</label>
-                <input type="password" name="user_password" class="form-control" required>
+                <input type="password" name="password" class="form-control" required>
               </div>
               <button type="submit" class="btn btn-grocery w-100">Login</button>
               <p class="text-center mt-3">Don’t have an account?

@@ -23,7 +23,7 @@ class User_login extends CI_Controller{
             $data["user_profile_picture"]=$user_profile;
 		}
 
-		if($this->User_model->insert('users',$data)){
+		if($this->My_model->insert('users',$data)){
             echo json_encode(['status' => 'success', 'message' => 'Signup successful! Please login.']);
         } else {
             echo json_encode(['status' => 'error', 'message' => 'Something went wrong, try again!']);
@@ -35,14 +35,20 @@ class User_login extends CI_Controller{
         $email    = $this->input->post('email');
         $password = $this->input->post('password');
 
-        $user = $this->User_model->login($email, $password);
+        $data = $this->My_model->select_where('users', ['user_email' => $email]);
 
-        if($user){
+        if(count($data)>0){
+			$user=$data[0];
             // session set
-            $this->session->set_userdata('user_id', $user['id']);
-            $this->session->set_userdata('user_name', $user['name']);
+			if($email==$user['user_email'] && $password==$user['user_password']){
 
-            echo json_encode(['status' => 'success', 'message' => 'Login successful!']);
+				$this->session->set_userdata('users2_id', $user['user_id']);
+				$this->session->set_userdata('user2_name', $user['user_name']);
+
+				echo json_encode(['status' => 'success', 'message' => 'Login successful!']);
+			} else {
+            echo json_encode(['status' => 'error', 'message' => 'Invalid email or password!']);
+        }
         } else {
             echo json_encode(['status' => 'error', 'message' => 'Invalid email or password!']);
         }
@@ -50,8 +56,8 @@ class User_login extends CI_Controller{
 
     // ✅ Logout
     public function logout(){
-        $this->session->sess_destroy();
-        redirect(base_url());
+	   unset($_SESSION['user2_id']);
+	   $this->index();
     }
 }
 ?>
