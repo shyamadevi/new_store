@@ -9,7 +9,7 @@ class My_model extends CI_Model {
 		return $this->db->insert_id();
 	}
 	function select($table){
-		return $this->db->get($table)->result_arrey();
+		return $this->db->get($table)->result_array();
 	}
 	function delete($table,$cond){
 		$this->db->where($cond)->delete($table);

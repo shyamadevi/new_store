@@ -7,7 +7,9 @@ class User extends CI_Controller{
 		$this->load->view('user/footer');
 	}
 	function index(){
-		$this->user_view('index');
+		$data['userdata']=$this->My_model->select('users');
+		// print_r($data);
+		$this->user_view('index',$data);
 	}
 }
 ?>
