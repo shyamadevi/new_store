@@ -105,7 +105,7 @@
                             </div>
                         </div>
                         
-                        <button class="btn-checkout">Proceed to Checkout</button>
+                       <a href="<?=base_url()?>user/checkout"> <button class="btn-checkout">Proceed to Checkout</button></a>
                     </div>
                 </div>
             </div>

@@ -16,5 +16,10 @@ class User extends CI_Controller{
 	{
 		$this->user_view('cart');
 	}
+
+	function checkout()
+	{
+		$this->user_view('checkout');
+	}
 }
 ?>
