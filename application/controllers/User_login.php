@@ -57,7 +57,7 @@ class User_login extends CI_Controller{
     // ✅ Logout
     public function logout(){
 	   unset($_SESSION['user2_id']);
-	   $this->index();
+	   redirect('user');
     }
 }
 ?>
