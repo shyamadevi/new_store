@@ -99,6 +99,10 @@
                 <label class="form-label">Password</label>
                 <input type="password" name="password" class="form-control" required>
               </div>
+							<div class="mb-2">
+                <label class="form-label">Profile Picture</label>
+                <input type="file" accept="image/*" name="profile_picture" class="form-control" required>
+              </div>
               <div class="mb-2">
                 <label class="form-label">Address</label>
                 <textarea name="address" class="form-control" required></textarea>
@@ -126,7 +130,7 @@
     $("#signupForm form").on("submit", function(e) {
       e.preventDefault();
       $.ajax({
-        url: "<?= base_url('user/signup') ?>",
+        url: "<?= base_url('user_login/signup') ?>",
         type: "POST",
         data: $(this).serialize(),
         dataType: "json",
@@ -145,7 +149,7 @@
     $("#loginForm form").on("submit", function(e) {
       e.preventDefault();
       $.ajax({
-        url: "<?= base_url('user/login') ?>",
+        url: "<?= base_url('user_login/login') ?>",
         type: "POST",
         data: $(this).serialize(),
         dataType: "json",
