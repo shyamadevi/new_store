@@ -101,7 +101,7 @@
               </div>
 							<div class="mb-2">
                 <label class="form-label">Profile Picture</label>
-                <input type="file" accept="image/*" name="profile_picture" class="form-control" required>
+                <input type="file" accept="image/*" name="profile_picture" class="form-control">
               </div>
               <div class="mb-2">
                 <label class="form-label">Address</label>
