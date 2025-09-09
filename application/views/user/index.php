@@ -342,6 +342,45 @@
      }
  </style>
 
+<!-- Slider Wrapper -->
+<div id="offerSubscriptionSlider" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <!-- Offer Slide -->
+    <div class="carousel-item active">
+      <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 350px; background: linear-gradient(135deg, #96fbc4 0%, #f9f586 100%);">
+        <h2 class="mb-3 animated fadeInDown">Special Weekend Offer!</h2>
+        <p class="mb-2 animated fadeInUp">Get <b>25% off</b> on all fresh produce.<br>Hurry, limited time only!</p>
+        <a href="#offers" class="btn btn-success animated bounceIn">Shop Now</a>
+      </div>
+    </div>
+
+    <!-- Subscription Slide -->
+    <div class="carousel-item">
+      <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 350px; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
+        <h2 class="mb-3 animated fadeInLeft">Monthly Subscription</h2>
+        <p class="mb-2 animated fadeInRight">Sign up & save up to <b>40%</b> every month on repeat orders!</p>
+        <a href="#subscribe" class="btn btn-primary animated jackInTheBox">Subscribe Now</a>
+      </div>
+    </div>
+
+    <!-- Add More Slides Here -->
+  </div>
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#offerSubscriptionSlider" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#offerSubscriptionSlider" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- For Bonus Animations, include Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+
  <section class="fruits-section" id="fresh_vegetables">
      <div class="container mt-5">
          <div class="row align-items-center mb-4">
