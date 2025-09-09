@@ -3,18 +3,19 @@ class Users extends CI_Controller{
 
 	// ✅ Signup (AJAX)
     public function signup(){
-        $name     = $this->input->post('name');
-        $phone    = $this->input->post('phone');
-        $email    = $this->input->post('email');
-        $password = $this->input->post('password');
-        $address = $this->input->post('address');
 
-		$check=['user_email'=>$email,'user_phone'=>$phone];
-		$crossceck=$this->My_model->select_where('users',$check);
+		$checkemail=['user_email'=>$_POST['email']];
+		$checkphone=['user_phone'=>$_POST['phone']];
 
-		if(count($crossceck)> 0){
-			echo json_encode(['status' => 'error', 'message' => 'Already Used email or Phone!']);
-		}else{
+		$crossceckemail=$this->My_model->select_where('users',$checkemail);
+		$crossceckphone=$this->My_model->select_where('users',$checkphone);
+
+		if(count($crossceckemail)== 0 && count($crossceckphone)== 0){
+			$name     = $this->input->post('name');
+			$phone    = $this->input->post('phone');
+			$email    = $this->input->post('email');
+			$password = $this->input->post('password');
+			$address = $this->input->post('address');
 
 			$data = [
 				'user_name'     => $name,
@@ -24,7 +25,6 @@ class Users extends CI_Controller{
 				'user_address'  => $address,
 				'user_status'  => 'Active',
 			];
-
 			if ($_FILES["profile_picture"]["error"]==0) {
 				$user_profile="user_assets/img/profile/".rand(0,50000).$data['user_name'].".png";
 				move_uploaded_file($_FILES['profile_picture']['tmp_name'],$user_profile);
@@ -36,11 +36,19 @@ class Users extends CI_Controller{
 			} else {
 				echo json_encode(['status' => 'error', 'message' => 'Something went wrong, try again!']);
 			}
+		} else {
+			if(count($crossceckemail)>0){
+				echo json_encode(['status' => 'error', 'message' => 'Email Already Used!']);
+				return;
+			}
+			if(count($crossceckphone)>0){
+				echo json_encode(['status' => 'error', 'message' => 'Phone Already Used!']);
+				return;
+			}
 		}
 	}
 
-
-    // ✅ Login (AJAX)
+	// ✅ Login (AJAX)
     public function login(){
         $email    = $this->input->post('email');
         $password = $this->input->post('password');
