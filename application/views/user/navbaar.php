@@ -86,6 +86,7 @@
                         <a href="#" class="nav-item nav-link active">Home</a>
                         <a href="#" class="nav-item nav-link">Shop</a>
                         <a href="#" class="nav-item nav-link">Shop Detail</a>
+                        <a href="#" class="<?=$base_url(user/sub)?>">Subscription</a>
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0 bg-secondary rounded-0">
