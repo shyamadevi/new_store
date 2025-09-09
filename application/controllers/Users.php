@@ -9,27 +9,36 @@ class Users extends CI_Controller{
         $password = $this->input->post('password');
         $address = $this->input->post('address');
 
+		$check=['user_email'=>$email,'user_phone'=>$phone];
+		$crossceck=$this->My_model->select_where('users',$check);
 
-        $data = [
-            'user_name'     => $name,
-            'user_phone'    => $phone,
-            'user_email'    => $email,
-            'user_password' => $password,
-            'user_address'  => $address,
-            'user_status'  => 'Active',
-        ];
-		if ($_FILES["profile_picture"]["error"]==0) {
-			$user_profile="user_assets/img/profile/".rand(0,50000).$data['user_name'].".png";
-            move_uploaded_file($_FILES['profile_picture']['tmp_name'],$user_profile);
-            $data["user_profile_picture"]=$user_profile;
+		if(count($crossceck)> 0){
+			echo json_encode(['status' => 'error', 'message' => 'Already Used email or Phone!']);
+		}else{
+
+			$data = [
+				'user_name'     => $name,
+				'user_phone'    => $phone,
+				'user_email'    => $email,
+				'user_password' => $password,
+				'user_address'  => $address,
+				'user_status'  => 'Active',
+			];
+
+			if ($_FILES["profile_picture"]["error"]==0) {
+				$user_profile="user_assets/img/profile/".rand(0,50000).$data['user_name'].".png";
+				move_uploaded_file($_FILES['profile_picture']['tmp_name'],$user_profile);
+				$data["user_profile_picture"]=$user_profile;
+			}
+
+			if($this->My_model->insert('users',$data)){
+				echo json_encode(['status' => 'success', 'message' => 'Signup successful! Please login.']);
+			} else {
+				echo json_encode(['status' => 'error', 'message' => 'Something went wrong, try again!']);
+			}
 		}
+	}
 
-		if($this->My_model->insert('users',$data)){
-            echo json_encode(['status' => 'success', 'message' => 'Signup successful! Please login.']);
-        } else {
-            echo json_encode(['status' => 'error', 'message' => 'Something went wrong, try again!']);
-        }
-    }
 
     // ✅ Login (AJAX)
     public function login(){
