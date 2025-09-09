@@ -37,7 +37,11 @@
 <script src="<?= base_url() ?>assets/js/core/bootstrap.min.js"></script>
 
 <!-- jQuery Scrollbar -->
+
 <script src="<?= base_url() ?>assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+
+<script src="<?= base_url() ?>assets/js/plugin/jqueryPremium Bootstrap 5 Admin Dashboard-scrollbar/jquery.scrollbar.min.js"></script>
 
 
 <!-- Chart JS -->
@@ -51,6 +55,7 @@
 
 <!-- Datatables -->
 <script src="<?= base_url() ?>assets/js/plugin/datatables/datatables.min.js"></script>
+
 
 <!-- Bootstrap Notify -->
 <!-- <script src="<?= base_url() ?>assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script> -->

@@ -233,14 +233,14 @@
               </div>
             </li>
             <!-- <li class="nav-item">
-              <a href="#">
+              <a href="widgets.html">
                 <i class="fas fa-desktop"></i>
                 <p>Widgets</p>
                 <span class="badge badge-success">4</span>
               </a>
             </li>
             <li class="nav-item">
-              <a href="#">
+              <a href="../../documentation/index.html">
                 <i class="fas fa-file"></i>
                 <p>Documentation</p>
                 <span class="badge badge-secondary">1</span>
@@ -320,7 +320,7 @@
                   </form>
                 </ul>
               </li>
-              <!-- <li class="nav-item topbar-icon dropdown hidden-caret">
+              <li class="nav-item topbar-icon dropdown hidden-caret">
                 <a
                   class="nav-link dropdown-toggle"
                   href="#"
@@ -341,7 +341,7 @@
                     </div>
                   </li>
                   <li>
-                    <div class="notif-scroll scrollbar-outer">
+                    <!-- <div class="notif-scroll scrollbar-outer">
                       <div class="notif-center">
                         <a href="#">
                           <div class="notif-icon notif-primary">
@@ -386,14 +386,14 @@
                           </div>
                         </a>
                       </div>
-                    </div>
+                    </div> -->
                   </li>
                   <li>
                     <a class="see-all" href="javascript:void(0);">See all notifications<i class="fa fa-angle-right"></i>
                     </a>
                   </li>
                 </ul>
-              </li> -->
+              </li>
 
               <li class="nav-item topbar-user dropdown hidden-caret">
                 <a
@@ -447,7 +447,6 @@
         </nav>
 
       </div>
-
 
       <!-- 
         <!DOCTYPE html>
