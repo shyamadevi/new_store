@@ -12,7 +12,7 @@ class User extends CI_Controller{
 		$this->user_view('index',$data);
 	}
 	function sub(){
-		$this->user_view('sub',$data);
+		$this->user_view('sub');
 	}
 }
 ?>

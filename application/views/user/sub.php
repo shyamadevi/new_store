@@ -10,15 +10,9 @@
       --success: #28a745;
     }
     
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f5f5f5;
-      color: #333;
-      line-height: 1.6;
-    }
 
-    header {
+    .header1 {
+        margin-top:50px;
       text-align: center;
       padding: 2.5rem 1rem;
       background: linear-gradient(135deg, var(--dark), var(--primary));
@@ -27,7 +21,7 @@
       overflow: hidden;
     }
     
-    header::before {
+    .header1::before {
       content: '';
       position: absolute;
       top: 0;
@@ -39,13 +33,13 @@
       background-position: bottom;
     }
     
-    header h1 {
+    .header1 h1 {
       margin: 0 0 0.5rem;
       font-size: 2.5rem;
       position: relative;
     }
     
-    header p {
+    .header1 p {
       font-size: 1.2rem;
       opacity: 0.9;
       position: relative;
@@ -53,11 +47,6 @@
       margin: 0 auto;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 2rem 1.5rem;
-    }
 
     .section {
       margin-bottom: 3rem;
@@ -152,24 +141,7 @@
       justify-content: center;
     }
 
-    .card {
-      flex: 1 1 300px;
-      background: white;
-      border-radius: 12px;
-      padding: 2rem;
-      text-align: center;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-      transition: transform 0.3s, box-shadow 0.3s;
-      position: relative;
-      border-top: 5px solid var(--primary);
-      max-width: 350px;
-    }
     
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-    }
-
     .popular {
       border-top-color: var(--secondary);
     }
@@ -200,19 +172,7 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
-    .card h3 {
-      margin: 1rem 0 0.5rem;
-      color: var(--dark);
-      font-size: 1.5rem;
-    }
-    
-    .card .description {
-      color: var(--gray);
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-      min-height: 40px;
-    }
-
+   
     .price {
       font-size: 1.8rem;
       margin: 1rem 0;
@@ -250,38 +210,7 @@
       margin-right: 0.5rem;
     }
 
-    .btn {
-      background: var(--primary);
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      margin-top: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      border: none;
-      transition: 0.3s;
-      width: 100%;
-      font-size: 1.1rem;
-      box-shadow: 0 4px 10px rgba(32, 201, 151, 0.3);
-    }
-    
-    .btn:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(32, 201, 151, 0.4);
-    }
-    
-    .btn-secondary {
-      background: white;
-      color: var(--primary);
-      border: 2px solid var(--primary);
-      box-shadow: none;
-    }
-    
-    .btn-secondary:hover {
-      background: rgba(32, 201, 151, 0.1);
-    }
-
+   
     .info-box {
       margin-top: 3rem;
       background: linear-gradient(to right, #e9f9f3, #e6f3ff);
@@ -289,6 +218,10 @@
       padding: 2rem;
       border-radius: 12px;
     }
+    body {
+  padding-top: 80px; /* match your navbar height */
+}
+
     
     .info-box h3 {
       margin: 0 0 1rem;
@@ -370,13 +303,94 @@
       display: block;
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: var(--dark);
-      color: white;
-      margin-top: 3rem;
-    }
+    .container1 {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 1.5rem;
+}
+
+.section1 {
+  margin-bottom: 3rem;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.section1 h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-dark);
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.plans1 {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.card1 {
+  flex: 1 1 300px;
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  border-top: 5px solid var(--primary);
+  max-width: 350px;
+}
+
+.card1:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.btn1 {
+  background: var(--primary);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  margin-top: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+  width: 100%;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(32, 201, 151, 0.3);
+}
+
+.btn1:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(32, 201, 151, 0.4);
+}
+
+.info-box1 {
+  margin-top: 3rem;
+  background: linear-gradient(to right, #e9f9f3, #e6f3ff);
+  border-left: 5px solid var(--primary);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.testimonial1 {
+  flex: 1 1 300px;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
 
     @media (max-width: 768px) {
       .plans {
@@ -384,7 +398,7 @@
         align-items: center;
       }
       
-      .card {
+      .card1 {
         width: 100%;
         max-width: 400px;
       }
@@ -400,10 +414,10 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1><i class="fas fa-calendar-check"></i> Premium Subscription Plans</h1>
+  <div class="header1">
+    <h1 style="color:white"><i class="fas fa-calendar-check text-light" ></i> Premium Subscription Plans</h1>
     <p>Fresh Milk & Fruits Delivered Daily to Your Doorstep</p>
-  </header>
+</div>
 
   <div class="container">
     <!-- Product Selection -->
@@ -471,7 +485,7 @@
       <p>Select the subscription plan that works best for you. Longer plans offer better savings!</p>
       
       <div class="plans">
-        <div class="card">
+        <div class="card1">
           <div class="discount">2% OFF</div>
           <h3>1 Month Plan</h3>
           <div class="description">Perfect for trying out our service</div>
@@ -484,10 +498,10 @@
             <li><i class="fas fa-check"></i> Pause anytime</li>
           </ul>
           
-          <button class="btn">Get Started</button>
+          <button class="btn1">Get Started</button>
         </div>
         
-        <div class="card popular">
+        <div class="card1 popular">
           <div class="popular-tag">MOST POPULAR</div>
           <div class="discount">5% OFF</div>
           <h3>6 Months Plan</h3>
@@ -502,10 +516,10 @@
             <li><i class="fas fa-check"></i> Free special item monthly</li>
           </ul>
           
-          <button class="btn">Subscribe Now</button>
+          <button class="btn1">Subscribe Now</button>
         </div>
         
-        <div class="card">
+        <div class="card1">
           <div class="discount">10% OFF</div>
           <h3>1 Year Plan</h3>
           <div class="description">Maximum savings for loyal customers</div>
@@ -520,7 +534,7 @@
             <li><i class="fas fa-check"></i> Custom delivery preferences</li>
           </ul>
           
-          <button class="btn">Become a Member</button>
+          <button class="btn1">Become a Member</button>
         </div>
       </div>
     </div>
