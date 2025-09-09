@@ -376,7 +376,15 @@
                              </p>
 
                              <button class="btn add-to-cart-btn">
-                                 <i class="fas fa-shopping-cart me-1"></i> Add To Cart
+								<?php if($this->session->userdata('users2_id')) {?>
+									<a href="<?= base_url('user/cart/add/1') ?>">
+										<i class="fas fa-shopping-cart me-1"></i> Add To Cart
+									</a>
+								<?php } else { ?>
+									<a href="#" data-bs-toggle="modal" data-bs-target="#authModal2">
+										<i class="fas fa-shopping-cart me-1"></i> Add To Cart
+									</a>
+								<?php } ?>
                              </button>
                          </a>
                      </div>
@@ -1002,7 +1010,7 @@
 
 
 
- <div class="modal fade auth-modal" id="authModal" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
+ <div class="modal fade auth-modal" id="authModal2" tabindex="-1" aria-labelledby="authModalLabel" aria-hidden="true">
      <div class="modal-dialog modal-dialog-centered">
          <div class="modal-content">
              <div class="modal-header">
@@ -1016,7 +1024,9 @@
              </div>
              <div class="modal-footer justify-content-center">
                  <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
-                 <button type="button" class="btn btn-primary">Login Now</button>
+                 <button type="button" class="btn btn-primary">
+					<a data-bs-toggle="modal" data-bs-target="#authModal">Login Now</a>
+				</button>
              </div>
          </div>
      </div>
@@ -1035,12 +1045,12 @@
                  this.classList.toggle('active');
              });
          });
-         const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-         addToCartButtons.forEach(button => {
-             button.addEventListener('click', function(e) {
-                 const modal = new bootstrap.Modal(document.getElementById('authModal'));
-                 modal.show();
-             });
-         });
+        //  const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+        //  addToCartButtons.forEach(button => {
+        //      button.addEventListener('click', function(e) {
+        //          const modal = new bootstrap.Modal(document.getElementById('authModal2'));
+        //          modal.show();
+        //      });
+        //  });
      });
  </script>
