@@ -110,7 +110,7 @@
               </span>
               <h4 class="text-section">Components</h4>
             </li>
-            <li class="nav-item">
+            <li class="nav-item mt-4">
               <a data-bs-toggle="collapse" href="#base">
                 <i class="fa fa-tasks"></i>
                 <p>Product Management</p>
@@ -131,7 +131,8 @@
                 </ul>
               </div>
             </li>
-            <li class="nav-item">
+
+            <li class="nav-item mt-4">
               <a data-bs-toggle="collapse" href="#sidebarLayouts">
                 <i class="fas fa-tag"></i>
                 <p>Offers Management</p>
@@ -152,7 +153,8 @@
                 </ul>
               </div>
             </li>
-            <li class="nav-item">
+
+            <li class="nav-item mt-4">
               <a data-bs-toggle="collapse" href="#forms">
                 <i class="fas fa-calendar-check"></i>
                 <p>Subscription <br>Management</p>
@@ -173,7 +175,8 @@
                 </ul>
               </div>
             </li>
-            <li class="nav-item">
+
+            <li class="nav-item mt-4">
               <a data-bs-toggle="collapse" href="#tables">
                 <i class="fas fa-users"></i>
                 <p>Employee Management</p>
@@ -194,7 +197,30 @@
                 </ul>
               </div>
             </li>
-            <li class="nav-item">
+
+            <li class="nav-item mt-4">
+              <a data-bs-toggle="collapse" href="#maps">
+                <i class="fas fa-user"></i>
+                <p>Customer Management</p>
+                <span class="caret"></span>
+              </a>
+              <div class="collapse" id="maps">
+                <ul class="nav nav-collapse">
+                  <li>
+                    <a href="<?= base_url() ?>admin/customer_list">
+                      <span class="sub-item">Customer List</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="<?= base_url() ?>admin/add_customer">
+                      <span class="sub-item">Add Customer</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="nav-item mt-4">
               <a data-bs-toggle="collapse" href="#maps">
                 <i class="fas fa-cog"></i>
                 <p>Settings</p>
@@ -215,7 +241,8 @@
                 </ul>
               </div>
             </li>
-            <li class="nav-item">
+
+            <li class="nav-item mt-4">
               <a data-bs-toggle="collapse" href="#charts">
                 <i class="fas fa-box"></i>
 
@@ -232,6 +259,7 @@
                 </ul>
               </div>
             </li>
+
             <!-- <li class="nav-item">
               <a href="widgets.html">
                 <i class="fas fa-desktop"></i>
