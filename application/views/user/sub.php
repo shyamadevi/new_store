@@ -628,10 +628,6 @@
     </div>
   </div>
 
-  <footer>
-    <p>© 2023 Fresh Grocery Delivery Service. All rights reserved.</p>
-    <p>Contact us: support@freshgrocery.com | +91 98765 43210</p>
-  </footer>
 
   <script>
     function toggleOptions() {
