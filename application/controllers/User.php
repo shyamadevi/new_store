@@ -6,8 +6,11 @@ class User extends CI_Controller{
 			$id['user_id']=$_SESSION['users2_id'];
 			$navdata['userdata']=$this->My_model->select_where('users',$id)[0];
 		}
+		$navdata['contactdata']=$this->My_model->select('contactform')[0];
+		// print_r($navdata['contactdata']);
+		// exit;
 
-		$this->load->view('user/navbaar',$navdata='');
+		$this->load->view('user/navbaar',$navdata);
 		$this->load->view("user/$page",$data='');
 		$this->load->view('user/footer');
 	}

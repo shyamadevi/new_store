@@ -69,7 +69,7 @@ class Admins extends CI_Controller{
     public function admin_logout(){
 	   unset($_SESSION['admin2_id']);
 	   unset($_SESSION['admin2_name']);
-	   redirect('admin');
+	   redirect('admin/body');
     }
 }
 ?>
