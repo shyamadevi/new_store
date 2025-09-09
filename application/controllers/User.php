@@ -14,5 +14,8 @@ class User extends CI_Controller{
 	function index(){
 		$this->user_view('index');
 	}
+	// function sub(){
+	// 	$this->user_view('sub',$data);
+	// }
 }
 ?>
