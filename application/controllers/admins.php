@@ -30,15 +30,16 @@ class Admins extends CI_Controller{
             $this->failed_login();
 
 		} else {
-            $cond = ["email" => $email, "role" => $op, "status" => "Active"];
+            $cond = ["employees_email" => $email, "employees_role" => $op, "employees_status" => "Active"];
             $data = $this->My_model->select_where("employees", $cond);
 
 			if (count($data) > 0) {
 				$emp = $data[0];
-                if ($password == $emp['password']) {
-                    $this->session->set_userdata("emp2_id", $emp["id"]);
-                    $this->session->set_userdata("emp2_role", $emp["role"]);
-                    switch ($emp['role']) {
+                if ($password == $emp['employees_password']) {
+                    $this->session->set_userdata("emp2_id", $emp["employees_id"]);
+                    $this->session->set_userdata("emp2_role", $emp["employees_role"]);
+                    $this->session->set_userdata("emp2_name", $emp["employees_name"]);
+                    switch ($emp['employees_role']) {
 					case "ProductManager":
                     redirect("product_manager/indexpm");
                     break;
