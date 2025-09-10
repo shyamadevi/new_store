@@ -111,12 +111,12 @@
               <h4 class="text-section">Components</h4>
             </li>
             <li class="nav-item mt-4">
-              <a data-bs-toggle="collapse" href="#base">
+              <a data-bs-toggle="collapse" href="#product">
                 <i class="fa fa-tasks"></i>
                 <p>Product Management</p>
                 <span class="caret"></span>
               </a>
-              <div class="collapse" id="base">
+              <div class="collapse" id="product">
                 <ul class="nav nav-collapse">
                   <li>
                     <a href="#">
@@ -133,12 +133,12 @@
             </li>
 
             <li class="nav-item mt-4">
-              <a data-bs-toggle="collapse" href="#sidebarLayouts">
+              <a data-bs-toggle="collapse" href="#offer">
                 <i class="fas fa-tag"></i>
                 <p>Offers Management</p>
                 <span class="caret"></span>
               </a>
-              <div class="collapse" id="sidebarLayouts">
+              <div class="collapse" id="offer">
                 <ul class="nav nav-collapse">
                   <li>
                     <a href="#">
@@ -155,12 +155,12 @@
             </li>
 
             <li class="nav-item mt-4">
-              <a data-bs-toggle="collapse" href="#forms">
+              <a data-bs-toggle="collapse" href="#subscription">
                 <i class="fas fa-calendar-check"></i>
                 <p>Subscription <br>Management</p>
                 <span class="caret"></span>
               </a>
-              <div class="collapse" id="forms">
+              <div class="collapse" id="subscription">
                 <ul class="nav nav-collapse">
                   <li>
                     <a href="#">
@@ -177,12 +177,12 @@
             </li>
 
             <li class="nav-item mt-4">
-              <a data-bs-toggle="collapse" href="#tables">
+              <a data-bs-toggle="collapse" href="#employee">
                 <i class="fas fa-users"></i>
                 <p>Employee Management</p>
                 <span class="caret"></span>
               </a>
-              <div class="collapse" id="tables">
+              <div class="collapse" id="employee">
                 <ul class="nav nav-collapse">
                   <li>
                     <a href="#">
@@ -199,12 +199,12 @@
             </li>
 
             <li class="nav-item mt-4">
-              <a data-bs-toggle="collapse" href="#maps">
+              <a data-bs-toggle="collapse" href="#customer">
                 <i class="fas fa-user"></i>
                 <p>Customer Management</p>
                 <span class="caret"></span>
               </a>
-              <div class="collapse" id="maps">
+              <div class="collapse" id="customer">
                 <ul class="nav nav-collapse">
                   <li>
                     <a href="<?= base_url() ?>admin/customer_list">
@@ -221,12 +221,12 @@
             </li>
 
             <li class="nav-item mt-4">
-              <a data-bs-toggle="collapse" href="#maps">
+              <a data-bs-toggle="collapse" href="#settings">
                 <i class="fas fa-cog"></i>
                 <p>Settings</p>
                 <span class="caret"></span>
               </a>
-              <div class="collapse" id="maps">
+              <div class="collapse" id="settings">
                 <ul class="nav nav-collapse">
                   <li>
                     <a href="#">
@@ -244,8 +244,7 @@
 
             <li class="nav-item mt-4">
               <a data-bs-toggle="collapse" href="#charts">
-                <i class="fas fa-box"></i>
-
+                <i class="fa fa-shopping-cart"></i>
                 <p>Order Management</p>
                 <span class="caret"></span>
               </a>
