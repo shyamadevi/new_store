@@ -30,5 +30,10 @@ class User extends CI_Controller{
 		$this->user_view('checkout');
 	}
 
+	function privacy()
+	{
+		$this->user_view('privacy');
+	}
+
 }
 ?>
