@@ -79,7 +79,7 @@
                 </div>
                 <div class="top-link pe-2">
                     <a href="<?=base_url()?>/user/privacy" class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
-                    <a href="<?=base_url()?>/user/terms" class="text-white"><small class="text-white mx-2">Terms of Use</small>/</a>
+                    <a href="<?=base_url()?>/user/term" class="text-white"><small class="text-white mx-2">Terms of Use</small>/</a>
                     <a href="<?=base_url()?>/user/sales" class="text-white"><small class="text-white ms-2">Sales and Refunds</small></a>
                 </div>
             </div>
@@ -106,7 +106,7 @@
                                 <a href="<?= base_url()?>user/checkout" class="dropdown-item">Checkout</a>
                             </div>
                         </div>
-                        <a href="#" class="nav-item nav-link">Contact</a>
+                        <a href="<?=base_url()?>/user/contact" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="d-flex m-3 me-0">
                         <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>

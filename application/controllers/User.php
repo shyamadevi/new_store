@@ -35,5 +35,20 @@ class User extends CI_Controller{
 		$this->user_view('privacy');
 	}
 
+	function term()
+	{
+		$this->user_view('term');
+	}
+
+	function sales()
+	{
+		$this->user_view('sales');
+	}
+
+	function contact()
+	{
+		$this->user_view('contact');
+	}
+
 }
 ?>
