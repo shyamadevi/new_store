@@ -41,6 +41,9 @@
 
 
   <link rel="stylesheet" href="<?= base_url() ?>assets/css/demo.css" />
+  <link rel="stylesheet" href="<?= base_url() ?>admin_assets/css/main2.css" />
+	<script src="https://kit.fontawesome.com/b8320da100.js" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -234,7 +237,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="<?=base_url()?>user_side/contact_details">
                       <span class="sub-item">Add Contact Details</span>
                     </a>
                   </li>

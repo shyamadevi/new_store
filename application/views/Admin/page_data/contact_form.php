@@ -1,5 +1,5 @@
 <main class="main-content">
-  <div class="container-fluid px-0">
+  <div class="container-fluid p-5 mt-5">
     <div class="container">
       <div class="card shadow border-0 rounded-4">
         <div class="card-header">
@@ -44,14 +44,14 @@
               <div class="col-md-6">
                 <label class="form-label fw-semibold">Instagram</label>
                 <input type="text" name="data_instagram" value="<?= isset($edit_data) ? $edit_data['data_instagram'] : '' ?>" class="form-control">
-			</div>
+							</div>
 
-			<div class="col-md-6">
-			  <label class="form-label fw-semibold">Linkedin</label>
-			  <input type="text" name="data_linkedin" value="<?= isset($edit_data) ? $edit_data['data_linkedin'] : '' ?>" class="form-control">
-			</div>
+							<div class="col-md-6">
+								<label class="form-label fw-semibold">Linkedin</label>
+								<input type="text" name="data_linkedin" value="<?= isset($edit_data) ? $edit_data['data_linkedin'] : '' ?>" class="form-control">
+							</div>
 
-			<div class="col-md-6">
+							<div class="col-md-6">
                 <label class="form-label fw-semibold">Whatsapp</label>
                 <input type="text" name="data_whatsapp" value="<?= isset($edit_data) ? $edit_data['data_whatsapp'] : '' ?>" class="form-control">
               </div>
@@ -63,7 +63,7 @@
 
               <div class="col-12 text-center">
                 <button type="submit" class="btn btn-advance px-4 py-2 mt-3">
-                  <i class="fas fa-plus me-1"></i> <?= isset($edit_data) ? 'Update' : 'Add' ?> Product
+                  <i class="fas fa-plus me-1"></i> <?= isset($edit_data) ? 'Update' : 'Add' ?> Contact
                 </button>
               </div>
 
