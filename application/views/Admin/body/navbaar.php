@@ -41,6 +41,9 @@
 
 
   <link rel="stylesheet" href="<?= base_url() ?>assets/css/demo.css" />
+  <link rel="stylesheet" href="<?= base_url() ?>admin_assets/css/main.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
 </head>
 
 <body>
@@ -234,7 +237,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="<?=base_url()?>user_side/contact_details">
                       <span class="sub-item">Add Contact Details</span>
                     </a>
                   </li>
