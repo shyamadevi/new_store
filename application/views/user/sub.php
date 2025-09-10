@@ -390,6 +390,40 @@
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
+.plans {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  min-height: 500px; /* adjust as needed */
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.features {
+  flex-grow: 1; /* takes up remaining space */
+}
+
+.btn1 {
+  margin-top: auto; /* pushes button to bottom */
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 
 
     @media (max-width: 768px) {
