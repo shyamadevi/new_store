@@ -11,7 +11,7 @@ class User extends CI_Controller{
 		// exit;
 
 		$this->load->view('user/navbaar',$navdata);
-		$this->load->view("user/$page",$data='');
+		$this->load->view("user/$page",$data);
 		$this->load->view('user/footer');
 	}
 	function index(){
@@ -30,9 +30,10 @@ class User extends CI_Controller{
 		$this->user_view('checkout');
 	}
 
-	function privacy()
-	{
-		$this->user_view('privacy');
+	function privacy(){
+		$data['privacy'] = $this->My_model->select('privacy_policy');
+		$data['privacyup'] = $this->My_model->privacy_update();
+		$this->user_view('privacy',$data);
 	}
 
 	function term()

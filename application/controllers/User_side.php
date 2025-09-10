@@ -50,10 +50,43 @@ class User_side extends CI_Controller{
 		}
 		redirect('user_side/contact_details');
 	}
+
 	function contact_info_delete($id){
 		$cond = ['contactform_id' => $id];
 		$this->My_model->delete('contactform', $cond);
 		redirect('user_side/contact_details');
+	}
+
+	function privacy(){
+		$data['form_data']=$this->My_model->select('privacy_policy');
+		// print_r($data);
+		$this->admin_view('page_data/privacy_policy',$data);
+	}
+
+	function privacy_form($id = null){
+		$data['form_action'] = base_url('user_side/privacy_info');
+
+		// Agar edit ho to data laake form me dikhana
+		if($id != null){
+			$cond = ["policy_id" => $id];
+			$data['edit_data'] = $this->My_model->select_where('privacy_policy', $cond)[0];
+			$data['form_action'] = base_url('user_side/privacy_info/'.$id);
+		}
+		$this->admin_view('page_data/privacy_form', $data);
+
+	}
+
+	function privacy_info($id = null){
+		if($id == null){
+			print_r($_POST);
+			$this->My_model->insert('privacy_policy', $_POST); // Insert
+		} else {
+			$cond = ['policy_id' => $id];
+			print_r($_POST);
+
+			$this->My_model->update('privacy_policy', $_POST, $cond); // Update
+		}
+		redirect('user_side/privacy');
 	}
 }
 ?>

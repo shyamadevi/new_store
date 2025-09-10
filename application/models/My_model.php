@@ -20,5 +20,16 @@ class My_model extends CI_Model {
 	function select_where($table,$cond) {
 		return $this->db->where($cond)->get($table)->result_array();
 	}
+
+
+
+	// user
+
+	function privacy_update(){
+		$sql="SELECT DATE_FORMAT(policy_updated, '%e %M, %Y') AS last_updated 
+		FROM privacy_policy
+		ORDER BY policy_updated DESC LIMIT 1; ";
+		return $this->db->query($sql)->result_array();
+	}
 }
 ?>

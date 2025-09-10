@@ -236,6 +236,16 @@
                       <span class="sub-item">Contact Details</span>
                     </a>
                   </li>
+									<li>
+                    <a href="<?=base_url()?>user_side/privacy">
+                      <span class="sub-item">Privacy Policy</span>
+                    </a>
+                  </li>
+									<li>
+                    <a href="<?=base_url()?>user_side/term">
+                      <span class="sub-item">Terms of Use</span>
+                    </a>
+                  </li>
                 </ul>
               </div>
             </li>
