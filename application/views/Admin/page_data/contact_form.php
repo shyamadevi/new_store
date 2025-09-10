@@ -16,9 +16,19 @@
           <form action="<?= $form_action ?>" method="post" enctype="multipart/form-data">
             <div class="row g-4">
 
-              <div class="col-md-6">
+               <div class="col-md-6">
+                <label class="form-label fw-semibold">Mobile</label>
+                <input type="number" name="data_mobile" value="<?= !empty($edit_data) ? $edit_data['data_mobile'] : '' ?>" class="form-control">
+              </div>
+
+							<div class="col-md-6">
                 <label class="form-label fw-semibold">Phone</label>
                 <input type="number" name="data_phone" value="<?= !empty($edit_data) ? $edit_data['data_phone'] : '' ?>" class="form-control">
+              </div>
+
+              <div class="col-md-6">
+                <label class="form-label fw-semibold">Toll Free</label>
+                <input type="text" name="data_toll_free" value="<?= !empty($edit_data) ? $edit_data['data_toll_free'] : '' ?>" class="form-control">
               </div>
 
               <div class="col-md-6">
@@ -28,32 +38,42 @@
 
               <div class="col-md-6">
                 <label class="form-label fw-semibold">Address</label>
-                <textarea name="data_address" class="form-control"><?= !empty($edit_data) ? $edit_data['data_address'] : '' ?></textarea>
+                <textarea name="data_address_street" class="form-control"><?= !empty($edit_data) ? $edit_data['data_address_street'] : '' ?></textarea>
+              </div>
+
+							 <div class="col-md-6">
+                <label class="form-label fw-semibold">Location</label>
+                <input type="text" name="data_address" value="<?= !empty($edit_data) ? $edit_data['data_address'] : '' ?>" class="form-control">
+              </div>
+
+							 <div class="col-md-6">
+                <label class="form-label fw-semibold">Map</label>
+                <input type="url" name="data_map" class="form-control" value="<?= !empty($edit_data) ? $edit_data['data_map'] : '' ?>">
               </div>
 
               <div class="col-md-6">
                 <label class="form-label fw-semibold">Facebook</label>
-                <input type="text" name="data_facebook" value="<?= !empty($edit_data) ? $edit_data['data_facebook'] : '' ?>" class="form-control">
+                <input type="url" name="data_facebook" value="<?= !empty($edit_data) ? $edit_data['data_facebook'] : '' ?>" class="form-control">
               </div>
 
               <div class="col-md-6">
                 <label class="form-label fw-semibold">Twitter</label>
-                <input type="text" name="data_twitter" value="<?= !empty($edit_data) ? $edit_data['data_twitter'] : '' ?>" class="form-control">
+                <input type="url" name="data_twitter" value="<?= !empty($edit_data) ? $edit_data['data_twitter'] : '' ?>" class="form-control">
               </div>
 
               <div class="col-md-6">
                 <label class="form-label fw-semibold">Instagram</label>
-                <input type="text" name="data_instagram" value="<?= !empty($edit_data) ? $edit_data['data_instagram'] : '' ?>" class="form-control">
+                <input type="url" name="data_instagram" value="<?= !empty($edit_data) ? $edit_data['data_instagram'] : '' ?>" class="form-control">
 							</div>
 
 							<div class="col-md-6">
 								<label class="form-label fw-semibold">Linkedin</label>
-								<input type="text" name="data_linkedin" value="<?= !empty($edit_data) ? $edit_data['data_linkedin'] : '' ?>" class="form-control">
+								<input type="url" name="data_linkedin" value="<?= !empty($edit_data) ? $edit_data['data_linkedin'] : '' ?>" class="form-control">
 							</div>
 
 							<div class="col-md-6">
                 <label class="form-label fw-semibold">Whatsapp</label>
-                <input type="text" name="data_whatsapp" value="<?= !empty($edit_data) ? $edit_data['data_whatsapp'] : '' ?>" class="form-control">
+                <input type="url" name="data_whatsapp" value="<?= !empty($edit_data) ? $edit_data['data_whatsapp'] : '' ?>" class="form-control">
               </div>
 
               <div class="col-md-6">

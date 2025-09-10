@@ -106,7 +106,7 @@
                                 <a href="<?= base_url()?>user/checkout" class="dropdown-item">Checkout</a>
                             </div>
                         </div>
-                        <a href="<?=base_url()?>/user/contact" class="nav-item nav-link">Contact</a>
+                        <a href="<?=base_url()?>user/contact" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="d-flex m-3 me-0">
                         <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>

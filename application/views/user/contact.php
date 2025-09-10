@@ -183,7 +183,7 @@
                     </div>
                     <div class="contact-text">
                         <h3>Our Location</h3>
-                        <p>Ahilyanagar, Maharashtra 414604</p>
+                        <p><?=$contactdata['data_address_street']?></p>
                     </div>
                 </div>
 
@@ -193,8 +193,8 @@
                     </div>
                     <div class="contact-text">
                         <h3>Phone Number</h3>
-                        <p>(555) 123-4567</p>
-                        <p>Toll Free: (800) 123-FRESH</p>
+                        <p><?=$contactdata['data_phone']?></p>
+                        <p>Toll Free: <?=$contactdata['data_toll_free']?></p>
                     </div>
                 </div>
 
@@ -204,7 +204,7 @@
                     </div>
                     <div class="contact-text">
                         <h3>Email Address</h3>
-                        <p>abc@supermarket.com</p>
+                        <p><?=$contactdata['data_email']?></p>
                     </div>
                 </div>
             </div>
@@ -212,7 +212,7 @@
             <!-- Map Section -->
             <div class="map-container">
                 <h3 class="map-title">Find Us Here</h3>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.0520187970515!2d74.72775317466586!3d19.10537375105081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdcb17ca9d749e5%3A0x516744f9b2f35ec9!2sA2Z%20IT%20HUB%20PVT.%20LTD.!5e0!3m2!1sen!2sin!4v1757398021293!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen=""></iframe>
+                <iframe src="<?=$contactdata['data_map']?>" width="600" height="450" style="border:0;" allowfullscreen=""></iframe>
             </div>
         </div>
 

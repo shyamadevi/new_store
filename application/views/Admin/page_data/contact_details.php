@@ -21,14 +21,18 @@
 									<th>Action</th>
                                     <th>Sr No</th>
                                     <th>Mobile</th>
+                                    <th>Phone</th>
+                                    <th>Toll Free</th>
                                     <th>Email</th>
+                                    <th>Address</th>
                                     <th>Location</th>
-                                    <th><i class="fab fa-facebook"></i></th>
-                                    <th><i class="fab fa-twitter"></i></th>
-                                    <th><i class="fab fa-instagram"></i></th>
-                                    <th><i class="fab fa-linkedin"></i></th>
-                                    <th><i class="fab fa-whatsapp"></i></th>
-                                    <th><i class="fab fa-youtube"></i></th>
+                                    <th>Map</th>
+                                    <th>Facebook</th>
+                                    <th>Twitter</th>
+                                    <th>Instagram</th>
+                                    <th>LinkedIn</th>
+                                    <th>WhatsApp</th>
+                                    <th>YouTube</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -41,8 +45,18 @@
 										</td>
                                         <td><?= $key + 1 ?></td>
                                         <td>
+                                            <a href="tel:<?= htmlspecialchars($row['data_mobile']) ?>" class="text-decoration-none">
+                                                <?= htmlspecialchars($row['data_mobile']) ?>
+                                            </a>
+                                        </td>
+										<td>
                                             <a href="tel:<?= htmlspecialchars($row['data_phone']) ?>" class="text-decoration-none">
                                                 <?= htmlspecialchars($row['data_phone']) ?>
+                                            </a>
+                                        </td>
+										<td>
+                                            <a href="tel:<?= htmlspecialchars($row['data_toll_free']) ?>" class="text-decoration-none">
+                                                <?= htmlspecialchars($row['data_toll_free']) ?>
                                             </a>
                                         </td>
                                         <td>
@@ -50,13 +64,15 @@
                                                 <?= htmlspecialchars($row['data_email']) ?>
                                             </a>
                                         </td>
+                                        <td><?= htmlspecialchars($row['data_address_street']) ?></td>
                                         <td><?= htmlspecialchars($row['data_address']) ?></td>
-                                        <td><?= htmlspecialchars($row['data_facebook']) ?></td>
-                                        <td><?= htmlspecialchars($row['data_twitter']) ?></td>
-                                        <td><?= htmlspecialchars($row['data_instagram']) ?></td>
-                                        <td><?= htmlspecialchars($row['data_linkedin']) ?></td>
-                                        <td><?= htmlspecialchars($row['data_whatsapp']) ?></td>
-                                        <td><?= htmlspecialchars($row['data_youtube']) ?></td>
+                                        <td><a href="<?= htmlspecialchars($row['data_map']) ?>" class="badge badge-black p-2"><i class="fas fa-map fs-4"></i></a></td>
+                                        <td><a href="<?= htmlspecialchars($row['data_facebook']) ?>" class="badge badge-primary p-2 fw-bold"><i class="fab fa-facebook fs-4"></i></a></td>
+                                        <td><a href="<?= htmlspecialchars($row['data_twitter']) ?>" class="badge badge-info p-2 fw-bold"><i class="fab fa-twitter fs-4"></i></a></td>
+                                        <td><a href="<?= htmlspecialchars($row['data_instagram']) ?>" class="badge badge-danger p-2 fw-bold"><i class="fab fa-instagram fs-4"></i></a></td>
+                                        <td><a href="<?= htmlspecialchars($row['data_linkedin']) ?>" class="badge badge-info p-2 fw-bold"><i class="fab fa-linkedin fs-4"></i></a></td>
+                                        <td><a href="<?= htmlspecialchars($row['data_whatsapp']) ?>" class="badge badge-success p-2 fw-bold"><i class="fab fa-whatsapp fs-4"></i></a></td>
+                                        <td><a href="<?= htmlspecialchars($row['data_youtube']) ?>" class="badge badge-danger p-2 fw-bold"><i class="fab fa-youtube fs-4"></i></a></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
