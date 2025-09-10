@@ -3,35 +3,52 @@ class Users extends CI_Controller{
 
 	// ✅ Signup (AJAX)
     public function signup(){
-        $name     = $this->input->post('name');
-        $phone    = $this->input->post('phone');
-        $email    = $this->input->post('email');
-        $password = $this->input->post('password');
-        $address = $this->input->post('address');
 
+		$checkemail=['user_email'=>$_POST['email']];
+		$checkphone=['user_phone'=>$_POST['phone']];
 
-        $data = [
-            'user_name'     => $name,
-            'user_phone'    => $phone,
-            'user_email'    => $email,
-            'user_password' => $password,
-            'user_address'  => $address,
-            'user_status'  => 'Active',
-        ];
-		if ($_FILES["profile_picture"]["error"]==0) {
-			$user_profile="user_assets/img/profile/".rand(0,50000).$data['user_name'].".png";
-            move_uploaded_file($_FILES['profile_picture']['tmp_name'],$user_profile);
-            $data["user_profile_picture"]=$user_profile;
+		$crossceckemail=$this->My_model->select_where('users',$checkemail);
+		$crossceckphone=$this->My_model->select_where('users',$checkphone);
+
+		if(count($crossceckemail)== 0 && count($crossceckphone)== 0){
+			$name     = $this->input->post('name');
+			$phone    = $this->input->post('phone');
+			$email    = $this->input->post('email');
+			$password = $this->input->post('password');
+			$address = $this->input->post('address');
+
+			$data = [
+				'user_name'     => $name,
+				'user_phone'    => $phone,
+				'user_email'    => $email,
+				'user_password' => $password,
+				'user_address'  => $address,
+				'user_status'  => 'Active',
+			];
+			if ($_FILES["profile_picture"]["error"]==0) {
+				$user_profile="user_assets/img/profile/".rand(0,50000).$data['user_name'].".png";
+				move_uploaded_file($_FILES['profile_picture']['tmp_name'],$user_profile);
+				$data["user_profile_picture"]=$user_profile;
+			}
+
+			if($this->My_model->insert('users',$data)){
+				echo json_encode(['status' => 'success', 'message' => 'Signup successful! Please login.']);
+			} else {
+				echo json_encode(['status' => 'error', 'message' => 'Something went wrong, try again!']);
+			}
+		} else {
+			if(count($crossceckemail)>0){
+				echo json_encode(['status' => 'error', 'message' => 'Email Already Used!']);
+				return;
+			}
+			if(count($crossceckphone)>0){
+				echo json_encode(['status' => 'error', 'message' => 'Phone Already Used!']);
+				return;
+			}
 		}
+	}
 
-		if($this->My_model->insert('users',$data)){
-            echo json_encode(['status' => 'success', 'message' => 'Signup successful! Please login.']);
-        } else {
-            echo json_encode(['status' => 'error', 'message' => 'Something went wrong, try again!']);
-        }
-    }
-
-    // ✅ Login (AJAX)
+	// ✅ Login (AJAX)
     public function login(){
         $email    = $this->input->post('email');
         $password = $this->input->post('password');
@@ -67,6 +84,8 @@ class Users extends CI_Controller{
 			$id['user_id']=$_SESSION['users2_id'];
 			$userdata['userdata']=$this->My_model->select_where('users',$id)[0];
 			// print_r($userdata);
+			$userdata['contactdata']=$this->My_model->select('contactform')[0];
+
 			$this->load->view('user/navbaar',$userdata);
 			$this->load->view("user/$page",$data='');
 			$this->load->view('user/footer');

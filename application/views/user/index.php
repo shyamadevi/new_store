@@ -334,13 +334,16 @@
          top: 20px;
      }
 
-     .card, .badge-off, .rounded{
-        border-top-left-radius: 30px !important;
-        border-top-right-radius: 5px !important;
-        border-bottom-left-radius: 5px !important;
-        border-bottom-right-radius: 30px !important;
+     .card,
+     .badge-off,
+     .rounded {
+         border-top-left-radius: 30px !important;
+         border-top-right-radius: 5px !important;
+         border-bottom-left-radius: 5px !important;
+         border-bottom-right-radius: 30px !important;
      }
  </style>
+
 
  <section class="fruits-section" id="fresh_vegetables">
      <div class="container mt-5">
@@ -376,15 +379,15 @@
                              </p>
 
                              <button class="btn add-to-cart-btn">
-								<?php if($this->session->userdata('users2_id')) {?>
-									<a href="<?= base_url('user/cart/add/1') ?>">
-										<i class="fas fa-shopping-cart me-1"></i> Add To Cart
-									</a>
-								<?php } else { ?>
-									<a href="#" data-bs-toggle="modal" data-bs-target="#authModal2">
-										<i class="fas fa-shopping-cart me-1"></i> Add To Cart
-									</a>
-								<?php } ?>
+                                 <?php if ($this->session->userdata('users2_id')) { ?>
+                                     <a href="<?= base_url('user/cart/add/1') ?>">
+                                         <i class="fas fa-shopping-cart me-1"></i> Add To Cart
+                                     </a>
+                                 <?php } else { ?>
+                                     <a href="#" data-bs-toggle="modal" data-bs-target="#authModal2">
+                                         <i class="fas fa-shopping-cart me-1"></i> Add To Cart
+                                     </a>
+                                 <?php } ?>
                              </button>
                          </a>
                      </div>
@@ -1025,8 +1028,8 @@
              <div class="modal-footer justify-content-center">
                  <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancel</button>
                  <button type="button" class="btn btn-primary">
-					<a data-bs-toggle="modal" data-bs-target="#authModal">Login Now</a>
-				</button>
+                     <a data-bs-toggle="modal" data-bs-target="#authModal">Login Now</a>
+                 </button>
              </div>
          </div>
      </div>
@@ -1045,12 +1048,12 @@
                  this.classList.toggle('active');
              });
          });
-        //  const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-        //  addToCartButtons.forEach(button => {
-        //      button.addEventListener('click', function(e) {
-        //          const modal = new bootstrap.Modal(document.getElementById('authModal2'));
-        //          modal.show();
-        //      });
-        //  });
+         //  const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+         //  addToCartButtons.forEach(button => {
+         //      button.addEventListener('click', function(e) {
+         //          const modal = new bootstrap.Modal(document.getElementById('authModal2'));
+         //          modal.show();
+         //      });
+         //  });
      });
  </script>

@@ -2,14 +2,20 @@
 class User extends CI_Controller{
 
 	public function user_view($page='',$data=''){
-		$this->load->view('user/navbaar');
-		$this->load->view("user/$page",$data);
+		if(isset($_SESSION['users2_id'])){
+			$id['user_id']=$_SESSION['users2_id'];
+			$navdata['userdata']=$this->My_model->select_where('users',$id)[0];
+		}
+		$navdata['contactdata']=$this->My_model->select('contactform')[0];
+		// print_r($navdata['contactdata']);
+		// exit;
+
+		$this->load->view('user/navbaar',$navdata);
+		$this->load->view("user/$page",$data='');
 		$this->load->view('user/footer');
 	}
 	function index(){
-		$data['userdata']=$this->My_model->select('users');
-		// print_r($data);
-		$this->user_view('index',$data);
+		$this->user_view('index');
 	}
 	function sub(){
 		$this->user_view('sub');
