@@ -88,5 +88,37 @@ class User_side extends CI_Controller{
 		}
 		redirect('user_side/privacy');
 	}
+
+	function terms(){
+		$data['form_data']=$this->My_model->select('terms');
+		// print_r($data);
+		$this->admin_view('page_data/terms',$data);
+	}
+
+	function terms_form($id = null){
+		$data['form_action'] = base_url('user_side/terms_info');
+
+		// Agar edit ho to data laake form me dikhana
+		if($id != null){
+			$cond = ["terms_id" => $id];
+			$data['edit_data'] = $this->My_model->select_where('terms', $cond)[0];
+			$data['form_action'] = base_url('user_side/terms_info/'.$id);
+		}
+		$this->admin_view('page_data/terms_form', $data);
+
+	}
+
+	function terms_info($id = null){
+		if($id == null){
+			print_r($_POST);
+			$this->My_model->insert('terms', $_POST); // Insert
+		} else {
+			$cond = ['terms_id' => $id];
+			print_r($_POST);
+
+			$this->My_model->update('terms', $_POST, $cond); // Update
+		}
+		redirect('user_side/terms');
+	}
 }
 ?>

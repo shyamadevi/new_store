@@ -36,9 +36,10 @@ class User extends CI_Controller{
 		$this->user_view('privacy',$data);
 	}
 
-	function term()
-	{
-		$this->user_view('term');
+	function term(){
+		$data['terms'] = $this->My_model->select('terms');
+		$data['termsup'] = $this->My_model->terms_update();
+		$this->user_view('term',$data);
 	}
 
 	function sales()

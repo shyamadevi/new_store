@@ -2,15 +2,15 @@
     <div class="page-inner">
         <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
             <div>
-                <h3 class="fw-bold mb-3"><i class="fas fa-list me-2"></i> Privacy Policy</h3>
+                <h3 class="fw-bold mb-3"><i class="fas fa-list me-2"></i> Terms and Conditions</h3>
             </div>
         </div>
 
         <div class="card shadow-sm border-0">
             <div class="card-body">
 				<div class="col-xl-3 col-md-4 col-sm-5">
-						<a href="<?= base_url() ?>user_side/privacy_form" class="btn btn-advance mb-3 mt-2">
-							<i class="fa-solid fa-plus me-1"></i> Add Privacy Policy
+						<a href="<?= base_url() ?>user_side/terms_form" class="btn btn-advance mb-3 mt-2">
+							<i class="fa-solid fa-plus me-1"></i> Add Terms and Conditions
 						</a>
 					</div>
                 <?php if (count($form_data) > 0) { ?>
@@ -26,9 +26,6 @@
                                     <th>Description 2</th>
                                     <th>Description 3</th>
                                     <th>Description 4</th>
-                                    <th>Description 5</th>
-                                    <th>Description 6</th>
-                                    <th>Description 7</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -36,16 +33,16 @@
                                 ?>
                                     <tr>
 										<td>
-											<a href="<?=base_url()?>user_side/privacy_form/<?= $row['policy_id'] ?>" class="btn btn-sm btn-warning">Edit</a>
-											<!-- <a href="<?=base_url()?>user_side/privacy_info_delete/<?= $row['policy_id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a> -->
+											<a href="<?=base_url()?>user_side/terms_form/<?= $row['terms_id'] ?>" class="btn btn-sm btn-warning">Edit</a>
+											<!-- <a href="<?=base_url()?>user_side/terms_info_delete/<?= $row['terms_id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a> -->
 										</td>
                                         <td><?= $key + 1 ?></td>
                                         <td>
 											<span class="
-											<?php if(empty($row['policy_title'])){ echo 'badge bg-black text-white';} ?>">
+											<?php if(empty($row['terms_title'])){ echo 'badge bg-black text-white';} ?>">
 											<?php
-											if(!empty($row['policy_title'])){ ?>
-												<?= htmlspecialchars($row['policy_title']) ?>
+											if(!empty($row['terms_title'])){ ?>
+												<?= htmlspecialchars($row['terms_title']) ?>
 											<?php } else { ?>
 												<?= "N/A"; ?>
 											<?php } ?>
@@ -53,22 +50,22 @@
 										</td>
                                         <td>
 											<span class="
-											<?php if(empty($row['policy_heading'])){ echo 'badge bg-black text-white';} ?>">
+											<?php if(empty($row['terms_heading'])){ echo 'badge bg-black text-white';} ?>">
 											<?php
-											if(!empty($row['policy_heading'])){ ?>
-												<?= htmlspecialchars($row['policy_heading']) ?>
+											if(!empty($row['terms_heading'])){ ?>
+												<?= htmlspecialchars($row['terms_heading']) ?>
 											<?php } else { ?>
 												<?= "N/A"; ?>
 											<?php } ?>
 											</span>
 										</td>
-                                        <?php for($i = 1; $i <= 7; $i++) { ?>
+                                        <?php for($i = 1; $i <= 4; $i++) { ?>
 										<td>
 											<span class="
-											<?php if(empty($row['policy_description_' . $i])){ echo 'badge bg-black text-white';} ?>">
+											<?php if(empty($row['terms_description_' . $i])){ echo 'badge bg-black text-white';} ?>">
 											<?php
-											if(!empty($row['policy_description_' . $i])){ ?>
-												<?= substr(htmlspecialchars($row['policy_description_' . $i]), 0, 50) ?>...
+											if(!empty($row['terms_description_' . $i])){ ?>
+												<?= substr(htmlspecialchars($row['terms_description_' . $i]), 0, 50) ?>...
 											<?php } else { ?>
 												<?= "N/A"; ?>
 											<?php } ?>
@@ -83,7 +80,7 @@
                 <?php } else { ?>
                     <div class="alert alert-warning text-center mt-5">
                         <i class="fas fa-exclamation-circle me-2"></i>
-                        Privacy Policy Data is Empty
+                        Terms and Conditions Data is Empty
                     </div>
                 <?php } ?>
             </div>

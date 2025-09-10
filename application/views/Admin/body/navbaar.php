@@ -242,7 +242,7 @@
                     </a>
                   </li>
 									<li>
-                    <a href="<?=base_url()?>user_side/term">
+                    <a href="<?=base_url()?>user_side/terms">
                       <span class="sub-item">Terms of Use</span>
                     </a>
                   </li>
