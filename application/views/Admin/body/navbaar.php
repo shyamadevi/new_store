@@ -229,7 +229,7 @@
               <div class="collapse" id="settings">
                 <ul class="nav nav-collapse">
                   <li>
-                    <a href="#">
+                    <a href="<?=base_url()?>user_side/contact_details">
                       <span class="sub-item">Contact Details</span>
                     </a>
                   </li>
