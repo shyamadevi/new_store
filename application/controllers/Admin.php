@@ -53,6 +53,15 @@ class Admin extends CI_Controller{
 		}
 		redirect('admin/products');
 	}
+	function msg(){
+		$data['msg']=$this->My_model->select('msg');
+		$this->admin_view('customer/msg',$data);
+	}
+	function remove_msg($id){
+		$cond=['msg_id'=>$id];
+		$this->My_model->delete('msg',$cond);
+		redirect('admin/msg');
+	}
 
 }
 ?>

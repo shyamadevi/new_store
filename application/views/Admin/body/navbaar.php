@@ -44,6 +44,11 @@
   <link rel="stylesheet" href="<?= base_url() ?>admin_assets/css/main2.css" />
 	<script src="https://kit.fontawesome.com/b8320da100.js" crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+	<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
 </head>
 
 <body>
@@ -215,8 +220,8 @@
                     </a>
                   </li>
                   <li>
-                    <a href="<?= base_url() ?>admin/add_customer">
-                      <span class="sub-item">Add Customer</span>
+                    <a href="<?= base_url() ?>admin/msg">
+                      <span class="sub-item">Msg</span>
                     </a>
                   </li>
                 </ul>

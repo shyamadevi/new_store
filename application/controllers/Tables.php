@@ -2,14 +2,18 @@
 class Tables extends CI_Controller{
 
 	function index(){
-		$sql = "ALTER TABLE contactform 
-		ADD data_address_street TEXT AFTER data_address,
-		ADD data_mobile TEXT AFTER data_phone,
-		ADD data_toll_free TEXT AFTER data_mobile,
-		ADD data_map TEXT AFTER data_address_street
-		";
+		$sql = "CREATE TABLE msg(
+			msg_id INT PRIMARY KEY AUTO_INCREMENT,
+			msg_name TEXT,
+			msg_phone TEXT,
+			msg_sub TEXT,
+			msg_desc TEXT,
+			msg_userid TEXT,
+			created DATETIME DEFAULT CURRENT_TIMESTAMP,
+			updated DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+		)";
 			$this->db->query($sql);
-			echo "Table Updated";
+			echo "Table Created";
 		}
 }
 ?>
