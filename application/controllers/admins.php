@@ -10,7 +10,7 @@ class Admins extends CI_Controller{
 			$id['admin_id']=$_SESSION['admin2_id'];
 			$navdata['admindata']=$this->My_model->select_where('main_admin',$id)[0];
 
-			$this->load->view('admin/body/navbaar',$navdata='');
+			$this->load->view('admin/body/navbaar',$navdata);
 			$this->load->view("admin/$page",$data);
 			$this->load->view('admin/body/footer');
 		}else{
@@ -110,6 +110,39 @@ class Admins extends CI_Controller{
 			$this->My_model->update('loginform', $_POST, $cond); // Update
 		}
 		redirect('admins/login_info');
+	}
+	function profile(){
+		if(isset($_SESSION['admin2_id'])){
+			$id['admin_id']=$_SESSION['admin2_id'];
+			$data['admin']=$this->My_model->select_where('main_admin',$id)[0];
+			// print_r($data);
+			$this->admin_view('body/profile',$data);
+		}else{
+			redirect(base_url('admins/login'));
+		}
+	}
+	public function update_profile(){
+		$cond['admin_id']  = $_SESSION['admin2_id'];
+
+		$data = [
+			'admin_name'    => $this->input->post('admin_name', true),
+			'admin_phone'   => $this->input->post('admin_phone', true),
+			'admin_email'   => $this->input->post('admin_email', true),
+			'admin_address' => $this->input->post('admin_address', true),
+		];
+
+		if ($_FILES["admin_pic"]["error"] == 0) {
+			$admin_profile = "admin_assets/img/profile/". $_POST['admin_name'] . rand(0,50000) . ".png";
+			move_uploaded_file($_FILES['admin_pic']['tmp_name'], $admin_profile);
+			$data["admin_pic"] = $admin_profile;
+		}
+
+		if (!empty($this->input->post('admin_password'))) {
+			$data['admin_password'] = $this->input->post('admin_password');
+		}
+
+		$this->My_model->update('main_admin', $data, $cond);
+		redirect('admins/profile');
 	}
 }
 ?>

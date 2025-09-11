@@ -466,7 +466,7 @@
                           <h4><?=$admindata['admin_name']?></h4>
                           <p class="text-muted"><?=$admindata['admin_email']?></p>
                           <a
-                            href="profile.html"
+                            href="<?=base_url()?>admins/profile"
                             class="btn btn-xs btn-secondary btn-sm">View Profile</a>
                         </div>
                       </div>
