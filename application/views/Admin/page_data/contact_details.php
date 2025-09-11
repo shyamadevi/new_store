@@ -8,12 +8,12 @@
 
         <div class="card shadow-sm border-0">
             <div class="card-body">
+				<div class="col-xl-3 col-md-4 col-sm-5">
+						<a href="<?= base_url() ?>user_side/contact_form" class="btn btn-advance mb-3 mt-2">
+							<i class="fa-solid fa-plus me-1"></i> Add Info
+						</a>
+					</div>
                 <?php if (count($form_data) > 0) { ?>
-					<div class="col-xl-3 col-md-4 col-sm-5">
-                            <a href="<?= base_url() ?>user_side/contact_form" class="btn btn-advance mb-3 mt-2">
-                                <i class="fa-solid fa-plus me-1"></i> Add Info
-                            </a>
-                        </div>
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover text-center align-middle mb-0" id="SubscriptionTable">
                             <thead class="table-dark text-white">

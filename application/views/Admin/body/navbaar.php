@@ -193,13 +193,13 @@
               <div class="collapse" id="employee">
                 <ul class="nav nav-collapse">
                   <li>
-                    <a href="#">
+                    <a href="<?= base_url() ?>admin/employee_list">
                       <span class="sub-item">Employee List</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
-                      <span class="sub-item">Add Employee</span>
+                    <a href="<?= base_url() ?>admins/login_info">
+                      <span class="sub-item">Login info</span>
                     </a>
                   </li>
                 </ul>
