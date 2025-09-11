@@ -449,7 +449,7 @@
                   </div>
                   <span class="profile-username">
                     <span class="op-7">Hi,</span>
-                    <span class="fw-bold">Admin</span>
+                    <span class="fw-bold"><?=$admindata['admin_name']?></span>
                   </span>
                 </a>
                 <ul class="dropdown-menu dropdown-user animated fadeIn">
@@ -463,8 +463,8 @@
                             class="avatar-img rounded" />
                         </div>
                         <div class="u-text">
-                          <h4>Admin</h4>
-                          <p class="text-muted">admin@example.com</p>
+                          <h4><?=$admindata['admin_name']?></h4>
+                          <p class="text-muted"><?=$admindata['admin_email']?></p>
                           <a
                             href="profile.html"
                             class="btn btn-xs btn-secondary btn-sm">View Profile</a>

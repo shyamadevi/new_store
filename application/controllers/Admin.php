@@ -9,8 +9,8 @@ class Admin extends CI_Controller{
 		if(isset($_SESSION['admin2_id'])){
 			$id['admin_id']=$_SESSION['admin2_id'];
 			$navdata['admindata']=$this->My_model->select_where('main_admin',$id)[0];
-
-			$this->load->view('admin/body/navbaar',$navdata='');
+			// print_r($navdata);
+			$this->load->view('admin/body/navbaar',$navdata);
 			$this->load->view("admin/$page",$data);
 			$this->load->view('admin/body/footer');
 		}else{
