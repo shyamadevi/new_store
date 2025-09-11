@@ -101,7 +101,7 @@ $(document).ready(function() {
         "language": {
             "search": "Search:",
             "lengthMenu": "Show _MENU_ entries",
-            "info": "Showing _START_ to _END_ of _TOTAL_ customers",
+            "info": "Showing _START_ to _END_ of _TOTAL_ Terms and Conditions",
             "paginate": {
                 "next": "Next",
                 "previous": "Previous"
