@@ -76,7 +76,14 @@
                                             <?php } ?>
                                         </td>
                                         <td><?= htmlspecialchars($row['employees_role']) ?></td>
-                                        <td><?= htmlspecialchars($row['employees_status']) ?></td>
+                                        <td>
+											<span class="p-2 badge <?php if($row['employees_status'] == 'Active') {
+												echo 'bg-success'; } elseif($row['employees_status'] == 'Inactive') 
+												{ echo 'bg-danger'; } elseif($row['employees_status'] == 'Leave') 
+												{ echo 'bg-dark'; } ?>">
+												<?= htmlspecialchars($row['employees_status']) ?>
+											</span>
+										</td>
                                         <td><?= date("d M Y, h:i A", strtotime($row['employees_sign'])) ?></td>
                                     </tr>
                                 <?php } ?>

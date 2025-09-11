@@ -43,7 +43,11 @@
 
 				<div class="col-md-6">
 					<label class="form-label fw-semibold">Role</label>
-					<input type="text" name="employees_role" class="form-control" value="<?= !empty($edit_data) ? $edit_data['employees_role'] : '' ?>">
+					<select name="employees_role" class="form-select">
+						<?php foreach($roles as $role){ ?>
+							<option value="<?= $role['role'] ?>" <?= !empty($edit_data) && $edit_data['employees_role'] == $role['role'] ? 'selected' : '' ?>><?= $role['role'] ?></option>
+						<?php } ?>
+					</select>
 				</div>
 
 				<div class="col-md-6">

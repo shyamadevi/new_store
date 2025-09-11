@@ -4,6 +4,19 @@ class Admins extends CI_Controller{
 		parent::__construct();
 		$this->load->model('My_model');
 	}
+	public function admin_view($page='',$data=''){
+
+		if(isset($_SESSION['admin2_id'])){
+			$id['admin_id']=$_SESSION['admin2_id'];
+			$navdata['admindata']=$this->My_model->select_where('main_admin',$id)[0];
+
+			$this->load->view('admin/body/navbaar',$navdata='');
+			$this->load->view("admin/$page",$data);
+			$this->load->view('admin/body/footer');
+		}else{
+			redirect(base_url('admins/login'));
+		}
+	}
 	public function login(){
 		$data['formdata']=$this->My_model->select('loginform');
 		// print_r($data);
@@ -15,7 +28,7 @@ class Admins extends CI_Controller{
         $email    = $this->input->post('log_email');
         $password = $this->input->post('log_password');
 
-		if ($op == 'admin') {
+		if ($op == 'Admin') {
             $cond = ["admin_email" => $email];
             $data = $this->My_model->select_where("main_admin", $cond);
 
@@ -72,5 +85,31 @@ class Admins extends CI_Controller{
 	   unset($_SESSION['admin2_name']);
 	   redirect('admin/index');
     }
+
+	function login_info(){
+		$data['logindata']=$this->My_model->select('loginform');
+		$this->admin_view('login_info',$data);
+	}
+	function login_form($id = null){
+		$data['form_action'] = base_url('admins/login_op');
+
+		// Agar edit ho to data laake form me dikhana
+		if($id != null){
+			$cond = ["form_id" => $id];
+			$data['edit_data'] = $this->My_model->select_where('loginform', $cond)[0];
+			$data['form_action'] = base_url('admins/login_op/'.$id);
+		}
+		$this->admin_view('login_form', $data);
+	}
+
+	function login_op($id = null){
+		if($id == null){
+			$this->My_model->insert('loginform', $_POST); // Insert
+		} else {
+			$cond = ['form_id' => $id];
+			$this->My_model->update('loginform', $_POST, $cond); // Update
+		}
+		redirect('admins/login_info');
+	}
 }
 ?>

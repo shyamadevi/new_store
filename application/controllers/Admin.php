@@ -53,6 +53,7 @@ class Admin extends CI_Controller{
 		}
 		redirect('admin/products');
 	}
+
 	function msg(){
 		$data['msg']=$this->My_model->select('msg');
 		$this->admin_view('customer/msg',$data);
@@ -70,6 +71,8 @@ class Admin extends CI_Controller{
 	}
 	function emp_form($id = null){
 		$data['form_action'] = base_url('admin/emp_op');
+
+		$data['roles'] = $this->My_model->select('loginform');
 
 		// Agar edit ho to data laake form me dikhana
 		if($id != null){

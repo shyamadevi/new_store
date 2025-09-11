@@ -66,13 +66,13 @@
                                         </td>
                                         <td><?= htmlspecialchars($row['data_address_street']) ?></td>
                                         <td><?= htmlspecialchars($row['data_address']) ?></td>
-                                        <td><a href="<?= htmlspecialchars($row['data_map']) ?>" class="badge badge-black p-2"><i class="fas fa-map fs-4"></i></a></td>
-                                        <td><a href="<?= htmlspecialchars($row['data_facebook']) ?>" class="badge badge-primary p-2 fw-bold"><i class="fab fa-facebook fs-4"></i></a></td>
-                                        <td><a href="<?= htmlspecialchars($row['data_twitter']) ?>" class="badge badge-info p-2 fw-bold"><i class="fab fa-twitter fs-4"></i></a></td>
-                                        <td><a href="<?= htmlspecialchars($row['data_instagram']) ?>" class="badge badge-danger p-2 fw-bold"><i class="fab fa-instagram fs-4"></i></a></td>
-                                        <td><a href="<?= htmlspecialchars($row['data_linkedin']) ?>" class="badge badge-info p-2 fw-bold"><i class="fab fa-linkedin fs-4"></i></a></td>
-                                        <td><a href="<?= htmlspecialchars($row['data_whatsapp']) ?>" class="badge badge-success p-2 fw-bold"><i class="fab fa-whatsapp fs-4"></i></a></td>
-                                        <td><a href="<?= htmlspecialchars($row['data_youtube']) ?>" class="badge badge-danger p-2 fw-bold"><i class="fab fa-youtube fs-4"></i></a></td>
+                                        <td><a href="<?= htmlspecialchars($row['data_map']) ?>" class="badge badge-black p-2"  target="_blank"><i class="fas fa-map fs-4"></i></a></td>
+                                        <td><a href="<?= htmlspecialchars($row['data_facebook']) ?>" class="badge badge-primary p-2 fw-bold"  target="_blank"><i class="fab fa-facebook fs-4"></i></a></td>
+                                        <td><a href="<?= htmlspecialchars($row['data_twitter']) ?>" class="badge badge-info p-2 fw-bold"  target="_blank"><i class="fab fa-twitter fs-4"></i></a></td>
+                                        <td><a href="<?= htmlspecialchars($row['data_instagram']) ?>" class="badge badge-danger p-2 fw-bold"  target="_blank"><i class="fab fa-instagram fs-4"></i></a></td>
+                                        <td><a href="<?= htmlspecialchars($row['data_linkedin']) ?>" class="badge badge-info p-2 fw-bold"  target="_blank"><i class="fab fa-linkedin fs-4"></i></a></td>
+                                        <td><a href="<?= htmlspecialchars($row['data_whatsapp']) ?>" class="badge badge-success p-2 fw-bold"  target="_blank"><i class="fab fa-whatsapp fs-4"></i></a></td>
+                                        <td><a href="<?= htmlspecialchars($row['data_youtube']) ?>" class="badge badge-danger p-2 fw-bold"  target="_blank"><i class="fab fa-youtube fs-4"></i></a></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
