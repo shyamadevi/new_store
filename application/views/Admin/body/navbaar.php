@@ -44,6 +44,11 @@
   <link rel="stylesheet" href="<?= base_url() ?>admin_assets/css/main2.css" />
 	<script src="https://kit.fontawesome.com/b8320da100.js" crossorigin="anonymous"></script>
 	<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+	<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
 </head>
 
 <body>
@@ -188,13 +193,13 @@
               <div class="collapse" id="employee">
                 <ul class="nav nav-collapse">
                   <li>
-                    <a href="#">
+                    <a href="<?= base_url() ?>admin/employee_list">
                       <span class="sub-item">Employee List</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
-                      <span class="sub-item">Add Employee</span>
+                    <a href="<?= base_url() ?>admins/login_info">
+                      <span class="sub-item">Login info</span>
                     </a>
                   </li>
                 </ul>
@@ -215,8 +220,8 @@
                     </a>
                   </li>
                   <li>
-                    <a href="<?= base_url() ?>admin/add_customer">
-                      <span class="sub-item">Add Customer</span>
+                    <a href="<?= base_url() ?>admin/msg">
+                      <span class="sub-item">Msg</span>
                     </a>
                   </li>
                 </ul>
@@ -444,7 +449,7 @@
                   </div>
                   <span class="profile-username">
                     <span class="op-7">Hi,</span>
-                    <span class="fw-bold">Admin</span>
+                    <span class="fw-bold"><?=$admindata['admin_name']?></span>
                   </span>
                 </a>
                 <ul class="dropdown-menu dropdown-user animated fadeIn">
@@ -458,10 +463,10 @@
                             class="avatar-img rounded" />
                         </div>
                         <div class="u-text">
-                          <h4>Admin</h4>
-                          <p class="text-muted">admin@example.com</p>
+                          <h4><?=$admindata['admin_name']?></h4>
+                          <p class="text-muted"><?=$admindata['admin_email']?></p>
                           <a
-                            href="profile.html"
+                            href="<?=base_url()?>admins/profile"
                             class="btn btn-xs btn-secondary btn-sm">View Profile</a>
                         </div>
                       </div>

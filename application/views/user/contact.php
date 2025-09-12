@@ -216,25 +216,25 @@
             </div>
         </div>
 
-        <div class="contact-form">
+        <div class="contact-form" id="contactForm">
             <h2 class="form-title">Send Us a Message</h2>
-            <form id="contactForm">
+            <form method="post">
                 <div class="form-group">
                     <label for="name">Full Name</label>
-                    <input type="text" id="name" placeholder="Your full name" required>
+                    <input type="text" name="name"  id="name" value="<?= isset($userdata) ? $userdata['user_name'] : '' ?>" placeholder="Your full name" required>
                 </div>
 
                 <div class="form-group">
                     <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" placeholder="Your phone number" required>
+                    <input type="tel" name="phone" id="phone" value="<?= isset($userdata) ? $userdata['user_phone'] : '' ?>" placeholder="Your phone number" required>
                 </div>
 
                 <div class="form-group">
                     <label for="subject">Subject</label>
-                    <select id="subject" required>
+                    <select id="subject" name="sub" required>
                         <option value="">Select a subject</option>
-                        <option value="delivery">Delivery Inquiry</option>
-                        <option value="product">Product Quality</option>
+                        <option value="delivery inquiry">Delivery Inquiry</option>
+                        <option value="product quality">Product Quality</option>
                         <option value="complaint">Complaint</option>
                         <option value="suggestion">Suggestion</option>
                         <option value="other">Other</option>
@@ -243,7 +243,7 @@
 
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea id="message" placeholder="How can we help you?" required></textarea>
+                    <textarea id="message" name="desc" placeholder="How can we help you?" required></textarea>
                 </div>
 
                 <button type="submit" class="btn" id="submitBtn">
@@ -253,3 +253,24 @@
         </div>
     </div>
 </div>
+<!-- JS -->
+  <script>
+    // msg AJAX
+    $("#contactForm form").on("submit", function(e) {
+      e.preventDefault();
+      $.ajax({
+        url: "<?= base_url('user_side/msg') ?>",
+        type: "POST",
+        data: $(this).serialize(),
+        dataType: "json",
+        success: function(res) {
+          if (res.status == "success") {
+            alert(res.message);
+          } else {
+            alert(res.message);
+          }
+        }
+      });
+    });
+
+  </script>

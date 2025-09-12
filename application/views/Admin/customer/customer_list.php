@@ -10,7 +10,7 @@
             <div class="card-body">
                 <?php if (count($customer_list) > 0) { ?>
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover text-center align-middle mb-0" id="SubscriptionTable">
+                        <table class="table table-bordered table-hover text-center align-middle mb-0" id="ListTable">
                             <thead class="table-dark text-white">
                                 <tr>
                                     <th>Action</th>
@@ -77,7 +77,7 @@
 <!-- DataTables Initialization Script -->
 <script>
 $(document).ready(function() {
-    $('#SubscriptionTable').DataTable({
+    $('#ListTable').DataTable({
         "paging": true,
         "searching": true,
         "ordering": true,
@@ -97,19 +97,12 @@ $(document).ready(function() {
     });
 });
 </script>
-
-
-
-
-
-
-
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function() {
         const searchInput = document.getElementById("searchInput");
         searchInput.addEventListener("keyup", function() {
             const value = this.value.toLowerCase();
-            const rows = document.querySelectorAll("#SubscriptionTable tbody tr");
+            const rows = document.querySelectorAll("#ListTable tbody tr");
             rows.forEach(function(row) {
                 const rowText = row.textContent.toLowerCase();
                 const isVisible = rowText.indexOf(value) > -1;
@@ -120,7 +113,7 @@ $(document).ready(function() {
 </script>
 <script type="text/javascript">
     function printOrders() {
-        const printContents = document.querySelector("#SubscriptionTable").outerHTML;
+        const printContents = document.querySelector("#ListTable").outerHTML;
         const originalContents = document.body.innerHTML;
 
         const printWindow = window.open('', '', 'height=800,width=1200');

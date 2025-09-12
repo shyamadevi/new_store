@@ -2,79 +2,45 @@
     <div class="page-inner">
         <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
             <div>
-                <h3 class="fw-bold mb-3"><i class="fas fa-list me-2"></i> Privacy Policy</h3>
+                <h3 class="fw-bold mb-3"><i class="fas fa-list me-2"></i> Login Details</h3>
             </div>
         </div>
 
         <div class="card shadow-sm border-0">
             <div class="card-body">
 				<div class="col-xl-3 col-md-4 col-sm-5">
-						<a href="<?= base_url() ?>user_side/privacy_form" class="btn btn-advance mb-3 mt-2">
-							<i class="fa-solid fa-plus me-1"></i> Add Privacy Policy
+						<a href="<?= base_url() ?>admins/login_form" class="btn btn-advance mb-3 mt-2">
+							<i class="fa-solid fa-plus me-1"></i> Add Login Info
 						</a>
 					</div>
-                <?php if (count($form_data) > 0) { ?>
+                <?php if (count($logindata) > 0) { ?>
                     <div class="table-responsive">
                         <table class="table table-bordered table-hover text-center align-middle mb-0" id="SubscriptionTable">
                             <thead class="table-dark text-white">
                                 <tr>
 									<th>Action</th>
                                     <th>Sr No</th>
-                                    <th>Title</th>
                                     <th>Heading</th>
-                                    <th>Description 1</th>
-                                    <th>Description 2</th>
-                                    <th>Description 3</th>
-                                    <th>Description 4</th>
-                                    <th>Description 5</th>
-                                    <th>Description 6</th>
-                                    <th>Description 7</th>
+                                    <th>Desc</th>
+                                    <th>Email</th>
+                                    <th>Role</th>
+                                    <th>Created</th>
+                                    <th>Updated</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($form_data as $key => $row) {
-                                ?>
-                                    <tr>
+								<?php foreach ($logindata as $key => $row) { ?>
+									<tr>
 										<td>
-											<a href="<?=base_url()?>user_side/privacy_form/<?= $row['policy_id'] ?>" class="btn btn-sm btn-warning">Edit</a>
-											<!-- <a href="<?=base_url()?>user_side/privacy_info_delete/<?= $row['policy_id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a> -->
+											<a href="<?=base_url()?>admins/login_form/<?= $row['form_id'] ?>" class="btn btn-sm btn-warning">Edit</a>
 										</td>
                                         <td><?= $key + 1 ?></td>
-                                        <td>
-											<span class="
-											<?php if(empty($row['policy_title'])){ echo 'badge bg-black text-white';} ?>">
-											<?php
-											if(!empty($row['policy_title'])){ ?>
-												<?= htmlspecialchars($row['policy_title']) ?>
-											<?php } else { ?>
-												<?= "N/A"; ?>
-											<?php } ?>
-											</span>
-										</td>
-                                        <td>
-											<span class="
-											<?php if(empty($row['policy_heading'])){ echo 'badge bg-black text-white';} ?>">
-											<?php
-											if(!empty($row['policy_heading'])){ ?>
-												<?= htmlspecialchars($row['policy_heading']) ?>
-											<?php } else { ?>
-												<?= "N/A"; ?>
-											<?php } ?>
-											</span>
-										</td>
-                                        <?php for($i = 1; $i <= 7; $i++) { ?>
-										<td>
-											<span class="
-											<?php if(empty($row['policy_description_' . $i])){ echo 'badge bg-black text-white';} ?>">
-											<?php
-											if(!empty($row['policy_description_' . $i])){ ?>
-												<?= substr(htmlspecialchars($row['policy_description_' . $i]), 0, 50) ?>...
-											<?php } else { ?>
-												<?= "N/A"; ?>
-											<?php } ?>
-											</span>
-										</td>
-                                        <?php } ?>
+                                        <td><?= htmlspecialchars($row['form_heading']) ?></td>
+										<td><?= htmlspecialchars($row['form_desc']) ?></td>
+										<td> <a href="mailto:<?= htmlspecialchars($row['form_email']) ?>"><?= htmlspecialchars($row['form_email']) ?></a></td>
+                                        <td><?= htmlspecialchars($row['role']) ?></td>
+                                        <td><?= htmlspecialchars($row['created']) ?></td>
+                                        <td><?= htmlspecialchars($row['updated']) ?></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
@@ -83,7 +49,7 @@
                 <?php } else { ?>
                     <div class="alert alert-warning text-center mt-5">
                         <i class="fas fa-exclamation-circle me-2"></i>
-                        Privacy Policy Data is Empty
+                        Customer Data is Empty
                     </div>
                 <?php } ?>
             </div>
@@ -104,7 +70,7 @@ $(document).ready(function() {
         "language": {
             "search": "Search:",
             "lengthMenu": "Show _MENU_ entries",
-            "info": "Showing _START_ to _END_ of _TOTAL_ Privacy Policy",
+            "info": "Showing _START_ to _END_ of _TOTAL_ Login Info",
             "paginate": {
                 "next": "Next",
                 "previous": "Previous"
@@ -114,13 +80,6 @@ $(document).ready(function() {
     });
 });
 </script>
-
-
-
-
-
-
-
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function() {
         const searchInput = document.getElementById("searchInput");

@@ -2,12 +2,7 @@
 class Tables extends CI_Controller{
 
 	function index(){
-		$sql = "ALTER TABLE contactform 
-		ADD data_address_street TEXT AFTER data_address,
-		ADD data_mobile TEXT AFTER data_phone,
-		ADD data_toll_free TEXT AFTER data_mobile,
-		ADD data_map TEXT AFTER data_address_street
-		";
+		$sql = "ALTER TABLE main_admin ADD admin_phone TEXT AFTER admin_name";
 			$this->db->query($sql);
 			echo "Table Updated";
 		}

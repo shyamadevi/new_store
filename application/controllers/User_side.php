@@ -120,5 +120,39 @@ class User_side extends CI_Controller{
 		}
 		redirect('user_side/terms');
 	}
+
+	function msg(){
+		$checkespam=['msg_name'=>$_POST['name'],'msg_desc'=>$_POST['desc']];
+
+		$crossceckmsg=$this->My_model->select_where('msg',$checkespam);
+
+		if(count($crossceckmsg)== 0){
+			if(isset($_SESSION['users2_id'])){
+				$name   = $this->input->post('name');
+				$phone  = $this->input->post('phone');
+				$sub    = $this->input->post('sub');
+				$desc   = $this->input->post('desc');
+
+				$data = [
+					'msg_name'  => $name,
+					'msg_phone' => $phone,
+					'msg_sub'   => $sub,
+					'msg_desc'  => $desc,
+					'msg_userid'    => $_SESSION['users2_id'],
+				];
+
+				if($this->My_model->insert('msg',$data)){
+					echo json_encode(['status' => 'success', 'message' => 'Messege send!.']);
+				} else {
+					echo json_encode(['status' => 'error', 'message' => 'Something went wrong, try again!']);
+				}
+			} else {
+				echo json_encode(['status' => 'error', 'message' => 'Login Required!']);
+			}
+		}else{
+			echo json_encode(['status' => 'error', 'message' => 'Spam Messege!']);
+		}
+	}
+
 }
 ?>
