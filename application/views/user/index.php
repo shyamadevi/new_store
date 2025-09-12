@@ -277,39 +277,40 @@ h1 {
 
 
 <script>
-const categoryFilter = document.getElementById('categoryFilter');
-const weightFilter = document.getElementById('weightFilter');
-const priceFilter = document.getElementById('priceFilter');
+const categoryFilter   = document.getElementById('categoryFilter');
+const weightFilter     = document.getElementById('weightFilter');
+const priceFilter      = document.getElementById('priceFilter');
 const popularityFilter = document.getElementById('popularityFilter');
+
 const productsGrid = document.getElementById('productsGrid');
-const products = Array.from(productsGrid.children);
+const products     = Array.from(productsGrid.children);
 
 const gridViewBtn = document.getElementById('gridView');
 const listViewBtn = document.getElementById('listView');
 
-// Category Filter
+
+// ---------------------- CATEGORY FILTER ----------------------
 categoryFilter.addEventListener('change', () => {
     const value = categoryFilter.value;
     products.forEach(p => {
         p.style.display = (value === 'all' || p.dataset.category === value) ? 'block' : 'none';
     });
 });
-
-// Grid/List toggle
+// ---------------------- GRID / LIST VIEW ----------------------
 gridViewBtn.addEventListener('click', () => {
     productsGrid.classList.remove('list-view');
     gridViewBtn.classList.add('active');
     listViewBtn.classList.remove('active');
 });
+
 listViewBtn.addEventListener('click', () => {
     productsGrid.classList.add('list-view');
     listViewBtn.classList.add('active');
     gridViewBtn.classList.remove('active');
 });
-
-// Subscription Badge dynamically
+// ---------------------- SUBSCRIPTION BADGE ----------------------
 products.forEach(p => {
-    if(p.dataset.subscription === "yes") {
+    if (p.dataset.subscription === "yes") {
         const badge = document.createElement('span');
         badge.className = 'subscription-badge';
         badge.textContent = 'Subscribe';
@@ -317,57 +318,53 @@ products.forEach(p => {
     }
 });
 
-// Quantity + / - buttons
-const qtyButtons = document.querySelectorAll('.quantity');
-qtyButtons.forEach(qty => {
-    const input = qty.querySelector('input');
-    const plus = qty.querySelector('.plus');
-    const minus = qty.querySelector('.minus');
 
-    plus.addEventListener('click', () => {
-        input.value = parseInt(input.value) + 1;
-    });
-    minus.addEventListener('click', () => {
-        if(parseInt(input.value) > 1) input.value = parseInt(input.value) - 1;
-    });
-});
-
-// Sorting Functions
+// ---------------------- SORTING FUNCTION ----------------------
 function sortProducts(criteria, order) {
     let sorted = [...products];
+
     sorted.sort((a, b) => {
         let valA, valB;
-        if(criteria === 'price') {
+
+        if (criteria === 'price') {
             valA = parseFloat(a.dataset.price);
             valB = parseFloat(b.dataset.price);
-        } else if(criteria === 'weight') {
+        } 
+        else if (criteria === 'weight') {
             valA = parseFloat(a.dataset.weight);
             valB = parseFloat(b.dataset.weight);
-        } else if(criteria === 'popularity') {
+        } 
+        else if (criteria === 'popularity') {
             valA = parseInt(a.dataset.popularity);
             valB = parseInt(b.dataset.popularity);
         }
-        if(order === 'low') return valA - valB;
-        if(order === 'high') return valB - valA;
+
+        if (order === 'low')  return valA - valB;
+        if (order === 'high') return valB - valA;
         return 0;
     });
+
     productsGrid.innerHTML = '';
     sorted.forEach(p => productsGrid.appendChild(p));
 }
 
-// Event listeners for sorting
+
+// ---------------------- SORTING EVENTS ----------------------
 weightFilter.addEventListener('change', () => {
     const val = weightFilter.value;
-    if(val !== 'all') sortProducts('weight', val);
+    if (val !== 'all') sortProducts('weight', val);
 });
+
 priceFilter.addEventListener('change', () => {
     const val = priceFilter.value;
-    if(val !== 'all') sortProducts('price', val);
+    if (val !== 'all') sortProducts('price', val);
 });
+
 popularityFilter.addEventListener('change', () => {
     const val = popularityFilter.value;
-    if(val !== 'all') sortProducts('popularity', val);
+    if (val !== 'all') sortProducts('popularity', val);
 });
 </script>
+
 </body>
 </html>
