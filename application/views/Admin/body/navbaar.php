@@ -127,12 +127,12 @@
               <div class="collapse" id="product">
                 <ul class="nav nav-collapse">
                   <li>
-                    <a href="#">
+                    <a href="<?=base_url('admin/products')?>">
                       <span class="sub-item">Product List</span>
                     </a>
                   </li>
                   <li>
-                    <a href="#">
+                    <a href="<?=base_url('admin/products_form')?>">
                       <span class="sub-item">Add Product</span>
                     </a>
                   </li>

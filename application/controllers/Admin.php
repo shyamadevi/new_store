@@ -27,32 +27,32 @@ class Admin extends CI_Controller{
         // print_r($data);
         $this->admin_view('customer/customer_list',$data);
     }
-	function products(){
-        // $data['products']=$this->My_model->select('products');
-        $this->admin_view('products/list');
-    }
+	// function products(){
+    //     // $data['products']=$this->My_model->select('products');
+    //     $this->admin_view('products/list');
+    // }
 
-	function products_form($id = null){
-		$data['form_action'] = base_url('admin/products_op');
+	// function products_form($id = null){
+	// 	$data['form_action'] = base_url('admin/products_op');
 
-		// Agar edit ho to data laake form me dikhana
-		if($id != null){
-			$cond = ["product_id" => $id];
-			$data['edit_data'] = $this->My_model->select_where('products', $cond)[0];
-			$data['form_action'] = base_url('admin/products_op/'.$id);
-		}
-		$this->admin_view('products/form', $data);
-	}
+	// 	// Agar edit ho to data laake form me dikhana
+	// 	if($id != null){
+	// 		$cond = ["product_id" => $id];
+	// 		$data['edit_data'] = $this->My_model->select_where('products', $cond)[0];
+	// 		$data['form_action'] = base_url('admin/products_op/'.$id);
+	// 	}
+	// 	$this->admin_view('products/form', $data);
+	// }
 
-	function products_op($id = null){
-		if($id == null){
-			$this->My_model->insert('products', $_POST); // Insert
-		} else {
-			$cond = ['id' => $id];
-			$this->My_model->update('products', $_POST, $cond); // Update
-		}
-		redirect('admin/products');
-	}
+	// function products_op($id = null){
+	// 	if($id == null){
+	// 		$this->My_model->insert('products', $_POST); // Insert
+	// 	} else {
+	// 		$cond = ['id' => $id];
+	// 		$this->My_model->update('products', $_POST, $cond); // Update
+	// 	}
+	// 	redirect('admin/products');
+	// }
 
 	function msg(){
 		$data['msg']=$this->My_model->select('msg');
@@ -102,6 +102,120 @@ class Admin extends CI_Controller{
 		}
 		redirect('admin/employee_list');
 	}
+
+	 public function products() {
+        // Fetch all products with category name
+        $this->db->select('products.*, categories.category_name');
+        $this->db->from('products');
+        $this->db->join('categories', 'categories.category_id = products.category_id', 'left');
+        $this->db->where('products.status', 'active');
+        $query = $this->db->get();
+        $data['products'] = $query->result();
+
+        // Load the products view
+        $this->admin_view('products', $data);
+    }
+
+
+
+
+		public function update_product($id = null) {
+    $this->load->library('upload');
+
+    // Gather POST data
+    $name = $this->input->post('name');
+    $brand = $this->input->post('brand');
+    $price = (float)$this->input->post('price');
+    $discount_percent = (float)$this->input->post('discount_percent');
+    $stock = (int)$this->input->post('stock');
+    $sub_option = $this->input->post('sub_option');
+    $variety = $this->input->post('variety');
+    $shelf_life = $this->input->post('shelf_life');
+    $origin = $this->input->post('origin');
+
+    // Calculate discount
+    $discount_amount =$price - ($price * $discount_percent) / 100;
+
+    $data = [
+        'name' => $name,
+        'brand' => $brand,
+        'price' => $price,
+        'discount_percent' => $discount_percent,
+        'discount_amount' => $discount_amount,
+        'stock' => $stock,
+        'sub_option' => $sub_option,
+        'variety' => $variety,
+        'shelf_life' => $shelf_life,
+        'origin' => $origin
+    ];
+
+    // Handle image upload
+    if (!empty($_FILES['image1']['name'])) {
+        $config['upload_path'] = './user_assets/img/products/';
+        $config['allowed_types'] = 'jpg|jpeg|png|gif';
+        $config['file_name'] = time() . '_' . $_FILES['image1']['name'];
+        $config['overwrite'] = false;
+
+        $this->upload->initialize($config);
+
+        if ($this->upload->do_upload('image1')) {
+            $uploadData = $this->upload->data();
+            $data['image1'] = $uploadData['file_name'];
+
+            // Delete old image if editing
+            if ($id) {
+                $old = $this->db->get_where('products', ['product_id' => $id])->row_array();
+                if (!empty($old['image1']) && file_exists('./user_assets/img/products/' . $old['image1'])) {
+                    @unlink('./user_assets/img/products/' . $old['image1']);
+                }
+            }
+        }
+    }
+
+    if ($id == null) {
+        // Insert new product
+        $this->My_model->insert('products', $data);
+    } else {
+        // Update existing product
+        $this->My_model->update('products', $data, ['product_id' => $id]);
+    }
+
+    redirect('admin/products');
+}
+public function products_form($id = null){
+    $data['form_action'] = base_url('admin/update_product');
+
+    // If editing, fetch existing data
+    if($id != null){
+        $cond = ["product_id" => $id];
+        $data['edit_data'] = $this->My_model->select_where('products', $cond)[0];
+        $data['form_action'] = base_url('admin/update_product/'.$id);
+    }
+
+    $this->admin_view('add_product', $data);
+}
+// In Admin.php controller
+public function delete_product($id = null)
+{
+    if ($id === null) {
+        echo "failed";
+        return;
+    }
+
+    
+    $this->load->model('my_model');
+
+    // Update status to 'deleted'
+    $update = $this->my_model->update('products', ['status' => 'deleted'], ['product_id' => $id]);
+
+    if ($update !== false) { 
+        echo "deleted";
+    } else {
+        echo "failed";
+    }
+}
+
+	
 
 }
 ?>

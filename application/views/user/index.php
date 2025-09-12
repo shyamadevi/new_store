@@ -227,125 +227,52 @@ h1 {
        </div>
     </div>
 
-    <!-- Products Grid -->
-    <div class="products" id="productsGrid">
-        <!-- Snacks -->
-        <div class="product-card" data-category="snacks" data-popularity="5" data-price="2.5" data-weight="100" data-subscription="yes">
-            <img src="https://cdn.shopaccino.com/suvidha-supermart/products/lays-classic-salted-117686700861469_l.jpg?v=592" alt="Chips">
-            <div class="product-info">
-                <h3>Potato Chips</h3>
-                <p class="price">₹210</p>
-                <p class="weight">100g</p>
-                <div class="quantity">
-                    <button class="qty-btn minus">-</button>
-                    <input type="number" value="1" min="1">
-                    <button class="qty-btn plus">+</button>
-                </div>
-                <button class="btn-add">Add to Cart</button>
-            </div>
-        </div>
+ <div class="products" id="productsGrid">
+    <?php if (!empty($products)): ?>
+        <?php foreach ($products as $product): ?>
+            <div class="product-card" 
+                data-category="<?= htmlspecialchars($product['category_id']) ?>" 
+                data-price="<?= htmlspecialchars($product['price']) ?>" 
+                data-weight="<?= htmlspecialchars($product['weight']) ?>" 
+                data-subscription="<?= htmlspecialchars($product['sub_option']) ?>">
 
-        <div class="product-card" data-category="snacks" data-popularity="7" data-price="4.5" data-weight="200" data-subscription="no">
-            <img src="https://t4.ftcdn.net/jpg/00/46/34/51/360_F_46345101_Q1y4CNprygAy1qnMcWGCvGWukwk4OCJe.jpg" alt="Nuts">
-            <div class="product-info">
-                <h3>Mixed Nuts</h3>
-                <p class="price">₹378</p>
-                <p class="weight">200g</p>
-                <div class="quantity">
-                    <button class="qty-btn minus">-</button>
-                    <input type="number" value="1" min="1">
-                    <button class="qty-btn plus">+</button>
-                </div>
-                <button class="btn-add">Add to Cart</button>
-            </div>
-        </div>
+                <!-- Product Image -->
+                <img src="<?= base_url('user_assets/img/products/' . $product['image1']) ?>" 
+                     alt="<?= htmlspecialchars($product['name']) ?>">
 
-        <!-- Beverages -->
-        <div class="product-card" data-category="beverages" data-popularity="10" data-price="3" data-weight="500" data-subscription="no">
-            <img src="https://m.media-amazon.com/images/I/71zHrg0MPTL.jpg" alt="Juice">
-            <div class="product-info">
-                <h3>Orange Juice</h3>
-                <p class="price">₹252</p>
-                <p class="weight">500ml</p>
-                <div class="quantity">
-                    <button class="qty-btn minus">-</button>
-                    <input type="number" value="1" min="1">
-                    <button class="qty-btn plus">+</button>
-                </div>
-                <button class="btn-add">Add to Cart</button>
-            </div>
-        </div>
+                <!-- Product Info -->
+                <div class="product-info">
+                    <h3><?= htmlspecialchars($product['name']) ?></h3>
+                    <p class="price">₹<?= number_format($product['price'], 2) ?></p>
+                    <p class="weight"><?= htmlspecialchars($product['weight']) ?></p>
 
-        <!-- Fruits -->
-        <div class="product-card" data-category="fruits" data-popularity="8" data-price="1.2" data-weight="150" data-subscription="yes">
-            <img src="https://media.istockphoto.com/id/622795204/photo/red-delicious-apples.jpg?s=612x612&w=0&k=20&c=-uu4u0m62t1nz3kcOVkallOgSWoOj_KtcVTCIlyfpXY=" alt="Apple">
-            <div class="product-info">
-                <h3>Red Apple</h3>
-                <p class="price">₹101</p>
-                <p class="weight">150g</p>
-                <div class="quantity">
-                    <button class="qty-btn minus">-</button>
-                    <input type="number" value="1" min="1">
-                    <button class="qty-btn plus">+</button>
-                </div>
-                <button class="btn-add">Add to Cart</button>
-            </div>
-        </div>
+                    <!-- Quantity Selector -->
+                    <div class="quantity">
+                        <button class="qty-btn minus">-</button>
+                        <input type="number" value="1" min="1">
+                        <button class="qty-btn plus">+</button>
+                    </div>
 
-        <!-- Dairy -->
-        <div class="product-card" data-category="dairy" data-popularity="9" data-price="2.0" data-weight="500" data-subscription="yes">
-            <img src="https://www.akijfairvalue.com/_next/image?url=https%3A%2F%2Fneoscms.blob.core.windows.net%2Fmedia%2F1752544966986_fresh_powder_milk_500gm.jpg&w=3840&q=75&dpl=dpl_4WUb9K45gcZnvpGJwncVTg1mD2fx" alt="Milk">
-            <div class="product-info">
-                <h3>Fresh Milk</h3>
-                <p class="price">₹168</p>
-                <p class="weight">500ml</p>
-                <div class="quantity">
-                    <button class="qty-btn minus">-</button>
-                    <input type="number" value="1" min="1">
-                    <button class="qty-btn plus">+</button>
-                </div>
-                <button class="btn-add">Add to Cart</button>
-            </div>
-        </div>
+                    <!-- Add to Cart Button -->
+                    <button class="btn-add">Add to Cart</button>
 
-        <div class="product-card" data-category="dairy" data-popularity="7" data-price="3.5" data-weight="200" data-subscription="no">
-            <img src="https://www.stonyfield.com/wp-content/uploads/2023/03/YoBaby-Lifestyle-Images-38.png" alt="Yogurt">
-            <div class="product-info">
-                <h3>Natural Yogurt</h3>
-                <p class="price">₹294</p>
-                <p class="weight">200g</p>
-                <div class="quantity">
-                    <button class="qty-btn minus">-</button>
-                    <input type="number" value="1" min="1">
-                    <button class="qty-btn plus">+</button>
+                    <!-- Show Subscription Button only if enabled -->
+                    <?php if ($product['sub_option'] == 'yes'): ?>
+                        <a href="<?= base_url('subscription?product_id=' . $product['product_id']) ?>" 
+                           class="btn btn-subscribe mt-2">
+                           Subscribe
+                        </a>
+                    <?php endif; ?>
                 </div>
-                <button class="btn-add">Add to Cart</button>
             </div>
-        </div>
-
-        <div class="product-card" data-category="dairy" data-popularity="8" data-price="4.0" data-weight="150" data-subscription="yes">
-            <img src="https://www.bbassets.com/media/uploads/p/l/40329477_2-nutoras-cheddar-processed-cheese-slices.jpg" alt="Cheese">
-            <div class="product-info">
-                <h3>Cheddar Cheese</h3>
-                <p class="price">₹336</p>
-                <p class="weight">150g</p>
-                <div class="quantity">
-                    <button class="qty-btn minus">-</button>
-                    <input type="number" value="1" min="1">
-                    <button class="qty-btn plus">+</button>
-                </div>
-                <button class="btn-add">Add to Cart</button>
-            </div>
-        </div>
-    </div>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <p>No products available.</p>
+    <?php endif; ?>
 </div>
 
 
-
-
-
-
-
+    </div>
 
 
 

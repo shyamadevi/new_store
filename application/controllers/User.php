@@ -15,7 +15,12 @@ class User extends CI_Controller{
 		$this->load->view('user/footer');
 	}
 	function index(){
-		$this->user_view('index');
+		 // Fetch only active products
+    $products = $this->db->where('status', 'active')->get('products')->result_array();
+
+    $data['products'] = $products;
+
+		$this->user_view('index',$data);
 	}
 	function sub(){
 		$this->user_view('sub');
