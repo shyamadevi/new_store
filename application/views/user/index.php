@@ -149,11 +149,12 @@ h1 {
     padding:8px 12px;
     border-radius:5px;
     cursor:pointer;
-    width:100%;
+    width:100% !important;
     transition:0.2s;
 }
 .btn-add:hover {
-  color:blue;
+  /* color:blue; */
+  font-weight: bold;
 }
 .subscription-badge {
     position:absolute;
@@ -247,22 +248,28 @@ h1 {
                     <p class="weight"><?= htmlspecialchars($product['weight']) ?></p>
 
                     <!-- Quantity Selector -->
-                    <div class="quantity">
+                    <!-- <div class="quantity">
                         <button class="qty-btn minus">-</button>
                         <input type="number" value="1" min="1">
                         <button class="qty-btn plus">+</button>
-                    </div>
+                    </div> -->
 
-                    <!-- Add to Cart Button -->
-                    <button class="btn-add">Add to Cart</button>
+                    <?php if (isset($_SESSION['users2_id'])) { ?>
+						<!-- Add to Cart Button -->
+						<a class="btn-add" href="<?= base_url('users/add_cart/' . $product['product_id']) ?>">Add to Cart</a>
+					<?php }else{ ?>
+						<a class="btn-add" data-bs-toggle="modal" data-bs-target="#authModal">Add to Cart</a>
+					<?php } ?>
 
                     <!-- Show Subscription Button only if enabled -->
-                    <?php if ($product['sub_option'] == 'yes'): ?>
+                    <?php if ($product['sub_option'] == 'yes' && isset($_SESSION['users2_id'])){ ?>
                         <a href="<?= base_url('subscription?product_id=' . $product['product_id']) ?>" 
                            class="btn btn-subscribe mt-2">
                            Subscribe
                         </a>
-                    <?php endif; ?>
+                    <?php }else{?>
+						<button class="btn btn-subscribe mt-2" data-bs-toggle="modal" data-bs-target="#authModal">Subscribe</button>
+					<?php } ?>
                 </div>
             </div>
         <?php endforeach; ?>
