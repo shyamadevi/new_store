@@ -191,6 +191,20 @@ h1 {
     .products.list-view .product-card { flex-direction:column; height:auto; }
     .products.list-view .product-card img { width:100%; height:180px; }
 }
+
+@media(max-width:768px){
+   #weightFilter,
+   #priceFilter,
+   #popularityFilter,
+   .view-toggle {
+      display: none;
+   }
+
+   #categoryFilter {
+      width: 100%;   /* मोबाइलवर category filter full width */
+   }
+}
+
 </style>
 </head>
 <body>
