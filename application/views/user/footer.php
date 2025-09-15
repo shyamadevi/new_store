@@ -58,7 +58,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="footer-item">
                     <h4 class="text-light mb-3">Contact</h4>
-                    <p>Address: <?= htmlspecialchars($contactdata['data_address']) ?> </p>
+                    <p>Address: <?= htmlspecialchars($contactdata['data_address_street']) ?> </p>
                     <p>Email: <a href="mailto:<?= htmlspecialchars($contactdata['data_email']) ?>"><?= htmlspecialchars($contactdata['data_email']) ?></a></p>
                     <p>Phone: <a href="tel:<?= htmlspecialchars($contactdata['data_phone']) ?>"><?= htmlspecialchars($contactdata['data_phone']) ?></a></p>
                     <p>Payment Accepted</p>
