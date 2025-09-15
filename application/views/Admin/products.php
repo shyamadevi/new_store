@@ -31,7 +31,7 @@
     <div class="page-inner">
         <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
             <div>
-                <h3 class="fw-bold mb-3"><i class="fas fa-list me-2"></i> Contact Details</h3>
+                <h3 class="fw-bold mb-3"><i class="fas fa-list me-2"></i> Products Details</h3>
             </div>
         </div>
 
@@ -39,7 +39,7 @@
             <div class="card-body">
 				<div class="col-xl-3 col-md-4 col-sm-5 text-light">
 						<a href="<?= base_url() ?>admin/products_form" class="btn text-white btn-advance mb-3 mt-2">
-							<i class="fa-solid fa-plus me-1"></i> Add Info
+							<i class="fa-solid fa-plus me-1"></i> Add Products
 						</a>
 					</div>
         <div class="card shadow-sm border-0">
