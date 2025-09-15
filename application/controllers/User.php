@@ -26,13 +26,11 @@ class User extends CI_Controller{
 		$this->user_view('sub');
 	}
 
-	function cart()
-	{
-		$this->user_view('cart');
-	}
-	function checkout()
-	{
-		$this->user_view('checkout');
+	function cart(){
+		$data['cartdata'] = $this->My_model->get_cart_items();
+		// echo "<pre>";
+		// print_r($data);
+		$this->user_view('cart',$data);
 	}
 
 	function privacy(){

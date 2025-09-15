@@ -146,6 +146,21 @@ class Users extends CI_Controller{
 		echo "<script>location.href=document.referrer;</script>";
 
 	}
+	function remove_cart($id){
+        $cond=["cart_id"=>$id];
+        $data=["cart_status"=>'deleted'];
+		$this->My_model->update("cart",$data,$cond);
+		// echo "deleted";
+        // echo "<script>alert('Product Remove From Cart!');</script>";
+        echo "<script>history.back();</script>";
+    }
+	function checkout(){
+        $cond=['user_id'=>$_SESSION['users2_id']];
+		$data["products"]=$this->My_model->get_cart_items();
+		$data["profile_data"]=$this->My_model->select_where("users",$cond)[0];
+
+		$this->user_view("checkout",$data);
+    }
 
 }
 ?>
