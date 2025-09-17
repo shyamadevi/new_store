@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -16,12 +16,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-		<!-- Bootstrap -->
+
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-		<!-- FontAwesome -->
+
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-		<!-- jQuery -->
+
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <link href="<?= base_url() ?>user_assets/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
@@ -38,26 +38,7 @@
     <link href="<?= base_url() ?>user_assets/css/cart.css" rel="stylesheet">
     <link href="<?= base_url() ?>user_assets/css/checkout.css" rel="stylesheet">
 
-    <style>
-        .top-nav {
-            /* background: linear-gradient(to right, #6A1B9A 0%, #AB47BC 15%, #AB47BC 85%, #F48FB1 100%); */
-            /* background: linear-gradient(to right, #1E88E5 0%, #42A5F5 15%, #42A5F5 85%, #26C6DA 100%); */
-            /* background: linear-gradient(to right, #FB8C00 0%, #FFB74D 15%, #FFB74D 85%, #FFE0B2 100%); */
-            /* background: linear-gradient(to right, #0D47A1 0%, #5C6BC0 15%, #5C6BC0 85%, #B39DDB 100%); */
-            /* background: linear-gradient(to right, #00796B 0%, #00ACC1 15%, #00ACC1 85%, #0288D1 100%); */
-            /* background: linear-gradient(to right, #E53935 0%, #FB8C00 15%, #FB8C00 85%, #FFEB3B 100%); */
-            /* background: linear-gradient(to right, #EC407A 0%, #FF6F61 15%, #FF6F61 85%, #FFCC80 100%); */
-            /* background: linear-gradient(to right, #2E7D32 0%, #9E9D24 15%, #9E9D24 85%, #CDDC39 100%); */
-            /* background: linear-gradient(to right, #3949AB 0%, #1E88E5 15%, #1E88E5 85%, #90CAF9 100%); */
-            /* background: linear-gradient(to right, #827717 0%, #FDD835 15%, #FDD835 85%, #FFF59D 100%); */
-            /* background: linear-gradient(to right, #1565C0 0%, #1976D2 15%, #1976D2 85%, #81D4FA 100%); */
-            background: linear-gradient(to right, #EC407A 0%, #7B1FA2 15%, #7B1FA2 85%, #CE93D8 100%);
-            /* background: linear-gradient(to right, #E65100 0%, #FB8C00 15%, #FB8C00 85%, #FFE0B2 100%); */
-            /* background: linear-gradient(to right, #00BCD4 0%, #0097A7 15%, #0097A7 85%, #1976D2 100%); */
-            /* background: linear-gradient(to right, #7B1FA2 0%, #EC407A 15%, #EC407A 85%, #FF7043 100%); */
-
-        }
-    </style>
+    
 </head>
 
 <body>
@@ -69,7 +50,7 @@
 
 
 
-    <!-- Navbar start -->
+
     <div class="container-fluid fixed-top">
         <div class="container topbar top-nav d-none d-lg-block">
             <div class="d-flex justify-content-between">
@@ -78,9 +59,9 @@
                     <small class="me-3"><i class="fas fa-envelope me-2 text-secondary"></i><a href="mailto:<?= htmlspecialchars($contactdata['data_email']) ?>" class="text-white"><?= htmlspecialchars($contactdata['data_email']) ?></a></small>
                 </div>
                 <div class="top-link pe-2">
-                    <a href="<?=base_url()?>user/privacy" class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
-                    <a href="<?=base_url()?>user/term" class="text-white"><small class="text-white mx-2">Terms of Use</small>/</a>
-                    <a href="<?=base_url()?>user/sales" class="text-white"><small class="text-white ms-2">Sales and Refunds</small></a>
+                    <a href="<?= base_url() ?>user/privacy" class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
+                    <a href="<?= base_url() ?>user/term" class="text-white"><small class="text-white mx-2">Terms of Use</small>/</a>
+                    <a href="<?= base_url() ?>user/sales" class="text-white"><small class="text-white ms-2">Sales and Refunds</small></a>
                 </div>
             </div>
         </div>
@@ -102,11 +83,11 @@
                         <div class="nav-item dropdown">
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                <a href="<?= base_url()?>user/cart" class="dropdown-item">Cart</a>
-                                <a href="<?= base_url()?>user/checkout" class="dropdown-item">Checkout</a>
+                                <a href="<?= base_url() ?>user/cart" class="dropdown-item">Cart</a>
+                                <a href="<?= base_url() ?>user/checkout" class="dropdown-item">Checkout</a>
                             </div>
                         </div>
-                        <a href="<?=base_url()?>user/contact" class="nav-item nav-link">Contact</a>
+                        <a href="<?= base_url() ?>user/contact" class="nav-item nav-link">Contact</a>
                     </div>
                     <div class="d-flex m-3 me-0">
                         <button class="btn-search btn border border-secondary btn-md-square rounded-circle bg-white me-4" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search text-primary"></i></button>
@@ -114,14 +95,14 @@
                             <i class="fa fa-shopping-bag fa-2x"></i>
                             <span class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1" style="top: -5px; left: 15px; height: 20px; min-width: 20px;">3</span>
                         </a>
-                        <!-- <a href="#" class="my-auto">
+                        <a href="#" class="my-auto">
                             <i class="fas fa-user fa-2x"></i>
-													</a> -->
+													</a>
 													<?php if ($this->session->userdata('users2_id')) { ?>
 														<a href="<?= base_url('users/profile') ?>" class="my-auto">
 															<i class="fas fa-user"></i>
 														</a>
-														<!-- <a href="<?= base_url('users/logout') ?>" class="btn btn-danger">Logout</a> -->
+														<a href="<?= base_url('users/logout') ?>" class="btn btn-danger">Logout</a>
 													<?php } else { ?>
 															<a class="my-auto" data-bs-toggle="modal" data-bs-target="#authModal">
 																<i class="fas fa-user"></i>
@@ -132,9 +113,9 @@
             </nav>
         </div>
     </div>
-    <!-- Navbar End -->
+    
 
-    <!-- Modal Search Start -->
+   
     <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen">
             <div class="modal-content rounded-0">
@@ -151,9 +132,8 @@
             </div>
         </div>
     </div>
-    <!-- Modal Search End -->
+    
 
-	<!-- Auth Modal -->
   <div class="modal fade" id="authModal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content p-3">
@@ -163,7 +143,6 @@
         </div>
         <div class="modal-body">
 
-          <!-- Login Form -->
           <div id="loginForm">
             <h4 class="text-center mb-3">Login</h4>
             <form method="post">
@@ -182,7 +161,7 @@
             </form>
           </div>
  
-          <!-- Signup Form -->
+        
           <div id="signupForm" style="display:none;">
             <h4 class="text-center mb-3">Sign Up</h4>
             <form method="post" enctype="multipart/form-data">
@@ -222,14 +201,14 @@
     </div>
   </div>
 
-  <!-- JS -->
+
   <script>
     function toggleForm(formId) {
       $("#loginForm, #signupForm").hide();
       $("#" + formId).show();
     }
 
-    // Signup AJAX
+
     $("#signupForm form").on("submit", function(e) {
       e.preventDefault();
       $.ajax({
@@ -240,7 +219,7 @@
         success: function(res) {
           if (res.status == "success") {
             alert(res.message);
-            toggleForm('loginForm'); // switch to login
+            toggleForm('loginForm');
           } else {
             alert(res.message);
           }
@@ -248,7 +227,7 @@
       });
     });
 
-    // Login AJAX
+
     $("#loginForm form").on("submit", function(e) {
       e.preventDefault();
       $.ajax({
@@ -258,7 +237,249 @@
         dataType: "json",
         success: function(res) {
           if (res.status == "success") {
-            location.reload(); // reload page
+            location.reload(); 
+          } else {
+            alert(res.message);
+          }
+        }
+      });
+    });
+  </script> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+
+  <title>New Store</title>
+
+
+  <!-- <link rel="shortcut icon" type="image/png" href="<?= base_url() ?>"> -->
+
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="<?= base_url() ?>assetss/css/all.min.css">
+
+  <link rel="stylesheet" href="<?= base_url() ?>assetss/bootstrap/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="<?= base_url() ?>assetss/css/owl.carousel.css">
+
+  <link rel="stylesheet" href="<?= base_url() ?>assetss/css/magnific-popup.css">
+
+  <link rel="stylesheet" href="<?= base_url() ?>assetss/css/animate.css">
+
+  <link rel="stylesheet" href="<?= base_url() ?>assetss/css/meanmenu.min.css">
+
+  <link rel="stylesheet" href="<?= base_url() ?>assetss/css/main.css">
+
+  <link rel="stylesheet" href="<?= base_url() ?>assetss/css/responsive.css">
+
+</head>
+
+<body>
+
+
+  <div class="loader">
+    <div class="loader-inner">
+      <div class="circle"></div>
+    </div>
+  </div>
+
+
+
+  <div class="top-header-area" id="sticker">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-sm-12 text-center">
+          <div class="main-menu-wrap">
+
+            <div class="site-logo">
+              <a href="index.html">
+                <!-- <img src="<?= base_url() ?>assetss" alt=""> -->
+                <h3 class="site-title text-white">New Store</h3>
+              </a>
+            </div>
+
+
+
+            <nav class="main-menu">
+              <ul>
+                <li class="current-list-item"><a href="<?= base_url() ?>user/index">Home</a>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Pages</a>
+                  <ul class="sub-menu">
+                    <li><a href="<?= base_url() ?>user/privacy">Privacy Policy</a></li>
+                    <li><a href="<?= base_url() ?>user/terms">Terms of Use</a></li>
+                    <li><a href="<?= base_url() ?>user/sales">Sales and Refunds</a></li>
+                  </ul>
+                </li>
+                <li><a href="<?= base_url('user/sub') ?>">Subscription</a>
+                </li>
+                <li><a href="<?= base_url() ?>user/contact">Contact</a></li>
+                <li><a href="<?= base_url() ?>user/shop">Shop</a>
+                  <ul class="sub-menu">
+                    <li><a href="<?= base_url() ?>user/shop">Shop</a></li>
+                    <li><a href="<?= base_url() ?>user/checkout">Check Out</a></li>
+                    <li><a href="<?= base_url() ?>user/single-product">Single Product</a></li>
+                    <li><a href="<?= base_url() ?>user/cart">Cart</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="header-icons">
+                    <a class="shopping-cart" href="<?= base_url() ?>user/cart"><i class="fas fa-shopping-cart"></i></a>
+                    <a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+                    <?php if ($this->session->userdata('users2_id')) { ?>
+                      <a href="<?= base_url('users/profile') ?>" class="my-auto">
+                        <i class="fas fa-user"></i>
+                      </a>
+                      <a href="<?= base_url('users/logout') ?>" class="btn btn-danger">Logout</a>
+                    <?php } else { ?>
+                      <a class="my-auto" data-bs-toggle="modal" data-bs-target="#authModal">
+                        <i class="fas fa-user"></i>
+                      </a>
+                    <?php } ?>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+            <a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>
+            <div class="mobile-menu"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="search-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <span class="close-btn"><i class="fas fa-window-close"></i></span>
+          <div class="search-bar">
+            <div class="search-bar-tablecell">
+              <h3>Search For:</h3>
+              <input type="text" placeholder="Keywords">
+              <button type="submit">Search <i class="fas fa-search"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="authModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-3">
+        <div class="modal-header">
+          <h5 class="modal-title">Welcome</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+
+          <div id="loginForm">
+            <h4 class="text-center mb-3">Login</h4>
+            <form method="post">
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" required>
+              </div>
+              <button type="submit" class="btn btn-grocery w-100">Login</button>
+              <p class="text-center mt-3">Don’t have an account?
+                <span class="text-primary" style="cursor:pointer;" onclick="toggleForm('signupForm')">Sign Up</span>
+              </p>
+            </form>
+          </div>
+
+
+          <div id="signupForm" style="display:none;">
+            <h4 class="text-center mb-3">Sign Up</h4>
+            <form method="post" enctype="multipart/form-data">
+              <div class="mb-2">
+                <label class="form-label">Full Name</label>
+                <input type="text" name="name" class="form-control" required>
+              </div>
+              <div class="mb-2">
+                <label class="form-label">Phone</label>
+                <input type="number" name="phone" class="form-control" required>
+              </div>
+              <div class="mb-2">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" required>
+              </div>
+              <div class="mb-2">
+                <label class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" required>
+              </div>
+              <div class="mb-2">
+                <label class="form-label">Profile Picture</label>
+                <input type="file" accept="image/*" name="profile_picture" class="form-control">
+              </div>
+              <div class="mb-2">
+                <label class="form-label">Address</label>
+                <textarea name="address" class="form-control" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-grocery w-100">Sign Up</button>
+              <p class="text-center mt-3">Already have an account?
+                <span class="text-primary" style="cursor:pointer;" onclick="toggleForm('loginForm')">Login</span>
+              </p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleForm(formId) {
+      $("#loginForm, #signupForm").hide();
+      $("#" + formId).show();
+    }
+
+
+    $("#signupForm form").on("submit", function(e) {
+      e.preventDefault();
+      $.ajax({
+        url: "<?= base_url('users/signup') ?>",
+        type: "POST",
+        data: $(this).serialize(),
+        dataType: "json",
+        success: function(res) {
+          if (res.status == "success") {
+            alert(res.message);
+            toggleForm('loginForm');
+          } else {
+            alert(res.message);
+          }
+        }
+      });
+    });
+
+
+    $("#loginForm form").on("submit", function(e) {
+      e.preventDefault();
+      $.ajax({
+        url: "<?= base_url('users/login') ?>",
+        type: "POST",
+        data: $(this).serialize(),
+        dataType: "json",
+        success: function(res) {
+          if (res.status == "success") {
+            location.reload();
           } else {
             alert(res.message);
           }
