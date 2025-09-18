@@ -1,9 +1,9 @@
 <?php
 class Admin extends CI_Controller{
-	public function __construct(){
-		parent::__construct();
-		$this->load->model('My_model');
-	}
+	// public function __construct(){
+	// 	parent::__construct();
+	// 	$this->load->model('My_model');
+	// }
 	public function admin_view($page='',$data=''){
 
 		if(isset($_SESSION['admin2_id'])){
