@@ -122,6 +122,45 @@ class Users extends CI_Controller{
 		$this->My_model->update('users', $data, $cond);
 		redirect('users/profile');
 	}
+	function incartqnt($cart_id){
+		$sql="UPDATE cart SET quantity=quantity+1 WHERE cart_id='$cart_id' AND user_id='".$_SESSION['users2_id']."'";
+		$this->db->query($sql);
+		echo "<script>location.href=document.referrer;</script>";
+	}
+	function decartqnt($cart_id){
+		$sql="UPDATE cart SET quantity=quantity-1 WHERE cart_id='$cart_id' AND quantity>1 AND user_id='".$_SESSION['users2_id']."'";
+		$this->db->query($sql);
+		echo "<script>location.href=document.referrer;</script>";
+	}
+	function add_cart($id){
+		$user=$_SESSION['users2_id'];
+		$sql= "SELECT * FROM cart WHERE product_id='$id' AND user_id='$user'";
+		$res=$this->db->query($sql);
+		if($res->num_rows()>0){
+			$sql="UPDATE cart SET quantity=quantity+1 WHERE product_id='$id' AND user_id='$user'";
+			$this->db->query($sql);
+		}else{
+			$sql="INSERT INTO cart (product_id,user_id,quantity,cart_status) VALUES('$id','$user','1','Active')";
+			$this->db->query($sql);
+		}
+		echo "<script>location.href=document.referrer;</script>";
+
+	}
+	function remove_cart($id){
+        $cond=["cart_id"=>$id];
+        $data=["cart_status"=>'deleted'];
+		$this->My_model->update("cart",$data,$cond);
+		// echo "deleted";
+        // echo "<script>alert('Product Remove From Cart!');</script>";
+        echo "<script>history.back();</script>";
+    }
+	function checkout(){
+        $cond=['user_id'=>$_SESSION['users2_id']];
+		$data["products"]=$this->My_model->get_cart_items();
+		$data["profile_data"]=$this->My_model->select_where("users",$cond)[0];
+
+		$this->user_view("checkout",$data);
+    }
 
 }
 ?>

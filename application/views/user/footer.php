@@ -1,4 +1,4 @@
-<div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
+<!-- <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5">
     <div class="container py-5">
         <div class="pb-4 mb-4" style="border-bottom: 1px solid rgba(226, 175, 24, 0.5) ;">
             <div class="row g-4">
@@ -38,8 +38,8 @@
                     <h4 class="text-light mb-3">Shop Info</h4>
                     <a class="btn-link" href="">About Us</a>
                     <a class="btn-link" href="">Contact Us</a>
-                    <a class="btn-link" href="">Privacy Policy</a>
-                    <a class="btn-link" href="">Terms & Condition</a>
+                    <a class="btn-link" href="<?= base_url() ?>user/privacy">Privacy Policy</a>
+                    <a class="btn-link" href="<?= base_url() ?>user/term">Terms & Condition</a>
                     <a class="btn-link" href="">Return Policy</a>
                     <a class="btn-link" href="">FAQs & Help</a>
                 </div>
@@ -58,7 +58,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="footer-item">
                     <h4 class="text-light mb-3">Contact</h4>
-                    <p>Address: <?= htmlspecialchars($contactdata['data_address']) ?> </p>
+                    <p>Address: <?= htmlspecialchars($contactdata['data_address_street']) ?> </p>
                     <p>Email: <a href="mailto:<?= htmlspecialchars($contactdata['data_email']) ?>"><?= htmlspecialchars($contactdata['data_email']) ?></a></p>
                     <p>Phone: <a href="tel:<?= htmlspecialchars($contactdata['data_phone']) ?>"><?= htmlspecialchars($contactdata['data_phone']) ?></a></p>
                     <p>Payment Accepted</p>
@@ -78,9 +78,8 @@
                 <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>A2Z IT HUB</a>, All right reserved.</span>
             </div>
             <div class="col-md-6 my-auto text-center text-md-end text-white">
-                <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
-                <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
-                <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                
+                
                 Designed By <a class="border-bottom" href="">Team 1</a> Distributed By <a class="border-bottom" href="">A2Z IT HUB</a>
             </div>
         </div>
@@ -90,11 +89,11 @@
 
 
 
-<!-- Back to Top -->
+
 <a href="#" class="btn btn-primary border-3 border-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
 
 
-<!-- JavaScript Libraries -->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="<?= base_url() ?>user_assets/lib/easing/easing.min.js"></script>
@@ -102,7 +101,102 @@
 <script src="<?= base_url() ?>user_assets/lib/lightbox/js/lightbox.min.js"></script>
 <script src="<?= base_url() ?>user_assets/lib/owlcarousel/owl.carousel.min.js"></script>
 
-<!-- Template Javascript -->
+
 <script src="<?= base_url() ?>user_assets/js/main.js"></script>
 </body>
+</html> -->
+
+
+<style>
+    .footer-area {
+        height: 350px;
+        padding-top: 50px;
+    }
+</style>
+
+
+<div class="footer-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-box about-widget">
+                    <h2 class="widget-title">About us</h2>
+                    <p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-box get-in-touch">
+                    <h2 class="widget-title">Get in Touch</h2>
+                    <ul>
+                        <li><?= htmlspecialchars($contactdata['data_address_street']) ?></li>
+                        <li><a href="mailto:<?= htmlspecialchars($contactdata['data_email']) ?>"><?= htmlspecialchars($contactdata['data_email']) ?></a></li>
+                        <li><a href="tel:<?= htmlspecialchars($contactdata['data_phone']) ?>"><?= htmlspecialchars($contactdata['data_phone']) ?></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-box pages">
+                    <h2 class="widget-title">Pages</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Shop</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="footer-box subscribe">
+                    <h2 class="widget-title">Subscribe</h2>
+                    <p>Subscribe to our mailing list to get the latest updates.</p>
+                    <form action="index.html">
+                        <input type="email" placeholder="Email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <p>Copyrights &copy; 2025 - <a href="#">Team 1</a>, All Rights Reserved.<br>
+                    Distributed By - <a href="#">A2Z IT HUB</a>
+                </p>
+            </div>
+            <div class="col-lg-6 text-right col-md-12">
+                <div class="social-icons">
+                    <ul>
+                        <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="<?= base_url() ?>assetss/js/jquery-1.11.3.min.js"></script>
+<script src="<?= base_url() ?>assetss/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?= base_url() ?>assetss/js/jquery.countdown.js"></script>
+<script src="<?= base_url() ?>assetss/js/jquery.isotope-3.0.6.min.js"></script>
+<script src="<?= base_url() ?>assetss/js/waypoints.js"></script>
+<script src="<?= base_url() ?>assetss/js/owl.carousel.min.js"></script>
+<script src="<?= base_url() ?>assetss/js/jquery.magnific-popup.min.js"></script>
+<script src="<?= base_url() ?>assetss/js/jquery.meanmenu.min.js"></script>
+<script src="<?= base_url() ?>assetss/js/sticker.js"></script>
+<script src="<?= base_url() ?>assetss/js/main.js"></script>
+
+</body>
+
 </html>
