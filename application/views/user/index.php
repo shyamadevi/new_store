@@ -334,10 +334,7 @@ function sortProducts(criteria, order) {
             valA = parseFloat(a.dataset.weight);
             valB = parseFloat(b.dataset.weight);
         } 
-        else if (criteria === 'popularity') {
-            valA = parseInt(a.dataset.popularity);
-            valB = parseInt(b.dataset.popularity);
-        }
+        
 
         if (order === 'low')  return valA - valB;
         if (order === 'high') return valB - valA;
